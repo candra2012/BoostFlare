@@ -1,0 +1,10 @@
+title: Boostflare
+description: Social media buzzing services for Twitter, TikTok, Instagram, and more.
+baseurl: "" # biarkan kosong untuk root domain
+url: "https://boostflare.biz.id"
+
+# Hilangkan tema default GitHub Pages
+# theme: jekyll-theme-primer
+
+markdown: kramdown
+permalink: pretty

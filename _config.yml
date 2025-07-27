@@ -1,10 +1,67 @@
-title: Boostflare
-description: Social media buzzing services for Twitter, TikTok, Instagram, and more.
-baseurl: "" # biarkan kosong untuk root domain
-url: "https://boostflare.biz.id"
+# -----------------------------------------------------------------------------
+# Pengaturan Situs Utama BoostFlare
+# -----------------------------------------------------------------------------
+title: "BoostFlare" # Judul utama website Anda
+description: "BoostFlare provides comprehensive social media marketing solutions across all major platforms, helping businesses and individuals enhance their online presence and reach. Grow your audience and engagement with our expert services." # Deskripsi yang lebih relevan untuk SEO dan audiens US
+tagline: "Ignite Your Social Media Presence" # Slogan yang menarik untuk layanan Anda
+author: "BoostFlare Team" # Nama organisasi
+email: "candrabudiana@gmail.com" # Alamat email kontak Anda
 
-# Hilangkan tema default GitHub Pages
-# theme: jekyll-theme-primer
+# Domain situs Anda. PENTING: Gunakan HTTPS!
+url: "https://www.boostflare.biz.id" # Domain aktif BoostFlare
+baseurl: "" # Kosongkan jika situs Anda di root domain (seperti boostflare.biz.id)
 
+# Bahasa utama situs Anda, difokuskan pada Bahasa Inggris Amerika Serikat.
+lang: en-US
+
+# Zona waktu yang relevan dengan target audiens US (Eastern Standard Time).
+timezone: America/New_York
+
+# -----------------------------------------------------------------------------
+# Pengaturan Build Jekyll
+# -----------------------------------------------------------------------------
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - .sass-cache/
+  - .jekyll-cache/
+  - .DS_Store
+  - CNAME # Penting jika Anda menggunakan custom domain!
+  - README.md
+  - LICENSE.md
+  - package.json
+  - package-lock.json
+
+# Permalinks untuk posting blog (jika ada).
+permalink: /blog/:title/
+
+# Markdown engine.
 markdown: kramdown
-permalink: pretty
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  toc_levels: "1,2,3"
+
+# -----------------------------------------------------------------------------
+# Plugin Jekyll (Wajib dan Direkomendasikan)
+# -----------------------------------------------------------------------------
+plugins:
+  - jekyll-feed       # Untuk feed RSS/Atom blog Anda
+  - jekyll-sitemap    # Untuk sitemap.xml
+  - jekyll-seo-tag    # WAJIB untuk SEO dan metadata
+
+# Konfigurasi jekyll-paginate (Aktifkan jika Anda membuat blog dengan banyak post)
+# paginate: 10 # Contoh: 10 posting per halaman
+# paginate_path: "/blog/page:num/"
+
+# Konfigurasi jekyll-seo-tag (Sangat direkomendasikan untuk visibilitas media sosial)
+social:
+  name: "BoostFlare"
+  links:
+    - "https://twitter.com/BoostFlare" # Ganti dengan URL Twitter BoostFlare jika ada
+    - "https://facebook.com/BoostFlare" # Ganti dengan URL Facebook BoostFlare jika ada
+    - "https://linkedin.com/company/BoostFlare" # Ganti dengan URL LinkedIn BoostFlare jika ada
+logo: "/assets/images/boostflare-logo.png" # Ganti dengan path logo BoostFlare yang sebenarnya
+                                           # Pastikan Anda meletakkan logo di folder ini.

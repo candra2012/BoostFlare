@@ -1,37 +1,42 @@
 ---
 layout: default
-title: Boostflare – Trusted Social Media Buzzing Services
-description: Grow your brand visibility with international-level social media campaigns. Boostflare provides secure, discreet, and effective buzzer services for Twitter, TikTok, Instagram, and more.
+title: BoostFlare – Ignite Your Social Media Presence
+description: Grow your brand visibility with international-level social media campaigns. BoostFlare provides secure, discreet, and effective social media services for Twitter, TikTok, Instagram, and more, tailored for global clients.
+lang: en-US
 ---
-
-{% include nav.html %}
 
 <section class="hero">
   <h1>Amplify Your Social Media Presence</h1>
-  <p>Boost your online visibility with powerful and discreet buzz campaigns tailored for creators, businesses, and agencies worldwide.</p>
+  <p>Boost your online visibility with powerful and discreet social media campaigns tailored for creators, businesses, and agencies worldwide.</p>
   <a href="/services/" class="cta">Explore Our Services</a>
 </section>
 
 <section id="trust">
   <h2>Trusted by Global Clients</h2>
-  <p>We help influencers, startups, and digital agencies achieve social momentum through strategic engagement. Our services are fast, reliable, and designed for impact.</p>
+  <p>We help influencers, startups, and digital agencies achieve social momentum through strategic engagement. Our services are fast, reliable, and designed for maximum impact.</p>
 </section>
 
-{# Baris-baris include yang salah sudah dihapus dari sini #}
-
 <section id="benefits">
-  <h2>Why Choose Boostflare?</h2>
+  <h2>Why Choose BoostFlare?</h2>
   <ul>
-    <li>✅ 100% Safe and Confidential</li>
-    <li>✅ Customized Campaigns for Every Platform</li>
-    <li>✅ Trusted by International Clients</li>
-    <li>✅ Real Engagement, Real Results</li>
+    <li>✅ 100% Safe and Confidential Services</li>
+    <li>✅ Customized Campaigns for Every Social Platform</li>
+    <li>✅ Proven Results with International Clients</li>
+    <li>✅ Real Engagement, Driving Real Growth</li>
+    <li>✅ 24/7 Dedicated Customer Support</li>
   </ul>
 </section>
 
-{# Baris-baris include yang salah sudah dihapus dari sini #}
-
-<footer>
-  <p>&copy; {{ site.time | date: "%Y" }} Boostflare. All rights reserved.</p>
-  <p><a href="/privacy-policy">Privacy Policy</a> • <a href="/terms">Terms of Service</a></p>
-</footer>
+{# If you decide to add a blog or dashboard section on the homepage later, you would add the content directly here, not as an include from _includes/ #}
+{# Example of direct content for a "Latest Blog Posts" section (no include here): #}
+{#
+<section id="latest-blog-posts">
+  <h2>Latest Insights from Our Blog</h2>
+  <ul>
+    {% for post in site.posts limit:3 %}
+      <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> - {{ post.date | date: "%B %d, %Y" }}</li>
+    {% endfor %}
+  </ul>
+  <a href="/blog/" class="btn btn-secondary">Read More from Our Blog</a>
+</section>
+#}

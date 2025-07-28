@@ -106,6 +106,14 @@
   margin-bottom: 2rem;
 }
 
+.hero .hero-content p.lead {
+  color: #ffffff !important;
+  font-weight: 700; /* 🔥 Tebal */
+  font-size: 1.25rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* 🔍 Tambahan shadow biar lebih kontras */
+  margin-bottom: 2rem;
+}
+
 .cta {
   display: inline-block;
   padding: 0.8rem 1.6rem;

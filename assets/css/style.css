@@ -17,52 +17,47 @@
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 0 15px; /* Memberikan padding horizontal dasar jika container tidak bekerja penuh */
-  max-width: 960px; /* Batasi lebar agar konten tidak terlalu lebar */
+  padding: 0 15px;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .hero-bg-animated {
   position: absolute;
-  top: -100px; /* Geser sedikit ke luar agar aman */
-  left: -100px; /* Geser sedikit ke luar agar aman */
-  width: calc(100% + 200px); /* Lebar 100% + buffer */
-  height: calc(100% + 200px); /* Tinggi 100% + buffer */
+  top: -100px;
+  left: -100px;
+  width: calc(100% + 200px);
+  height: calc(100% + 200px);
   background: linear-gradient(
     45deg,
-    #ff0084, /* Warna 1 */
-    #3300ff, /* Warna 2 */
-    #00ff99, /* Warna 3 */
-    #ff0084  /* Kembali ke Warna 1 untuk looping seamless */
+    #ff0084,
+    #3300ff,
+    #00ff99,
+    #ff0084
   );
-  background-size: 800% 800%; /* <-- PERUBAHAN KRUSIAL DI SINI: UKURAN GRADIENT SANGAT BESAR */
+  background-size: 800% 800%;
   animation: gradientShiftAndRotate 20s ease infinite;
   z-index: 0;
   opacity: 0.8;
   border-radius: 0 !important;
+
+  /* <-- PERUBAHAN AGRESIV DI SINI UNTUK RENDERING --> */
+  /* Ini memaksa rendering GPU yang mungkin mengatasi pemotongan */
+  filter: blur(0);
+  -webkit-filter: blur(0); /* Untuk kompatibilitas browser lama */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0); /* Untuk kompatibilitas browser lama */
+  will-change: transform, background-position, filter; /* Memberitahu browser untuk mengoptimalkan */
 }
 
-/* @keyframes gradientShiftAndRotate */
+/* @keyframes gradientShiftAndRotate tidak berubah */
 @keyframes gradientShiftAndRotate {
-  0% {
-    transform: rotate(0deg);
-    background-position: 0% 0%;
-  }
-  25% {
-    background-position: 100% 0%;
-  }
-  50% {
-    transform: rotate(360deg);
-    background-position: 100% 100%;
-  }
-  75% {
-    background-position: 0% 100%;
-  }
-  100% {
-    transform: rotate(720deg); /* Bisa 360deg atau 720deg untuk 2 putaran */
-    background-position: 0% 0%;
-  }
+  0% { transform: rotate(0deg); background-position: 0% 0%; }
+  25% { background-position: 100% 0%; }
+  50% { transform: rotate(360deg); background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+  100% { transform: rotate(720deg); background-position: 0% 0%; }
 }
 
 /* ... (Sisa kode CSS Anda yang lainnya di bawah) ... */

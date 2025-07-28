@@ -1,5 +1,128 @@
 /* assets/css/style.css */
 
+/* ... (Kode CSS Anda yang sudah ada di atas) ... */
+
+
+/* === Hero Background Animation (BARU DITAMBAHKAN UNTUK ANIMASI) === */
+.hero {
+  position: relative; /* Penting untuk penempatan hero-bg-animated */
+  overflow: hidden; /* Penting agar animasi tidak keluar dari batas hero */
+  padding: 8rem 0; /* Padding lebih besar untuk efek visual yang lebih baik */
+  color: #fff; /* Pastikan teks di hero berwarna putih agar kontras dengan background animasi */
+  z-index: 1; /* Pastikan konten hero ada di atas background animasi */
+}
+
+.hero-content { /* Konten utama di dalam hero */
+  position: relative;
+  z-index: 2; /* Pastikan di atas hero-bg-animated */
+}
+
+.hero-bg-animated {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    #ff0084, /* Warna 1 */
+    #3300ff, /* Warna 2 */
+    #00ff99, /* Warna 3 */
+    #ff0084  /* Kembali ke Warna 1 untuk looping seamless */
+  );
+  background-size: 200% 200%; /* Penting untuk animasi gradien */
+  animation: gradientRotate 15s ease infinite; /* Animasi utama */
+  z-index: 0; /* Pastikan ini di belakang konten hero */
+  opacity: 0.8; /* Sedikit transparan agar teks lebih mudah dibaca */
+}
+
+@keyframes gradientRotate {
+  0% {
+    transform: rotate(0deg);
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 100%;
+  }
+  50% {
+    transform: rotate(360deg);
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+  100% {
+    transform: rotate(720deg); /* Bisa 360deg atau 720deg untuk 2 putaran */
+    background-position: 0% 50%;
+  }
+}
+
+
+/* ... (Sisa kode CSS Anda yang sudah ada di bawah ini, termasuk background-color body, navigasi, dll.) ... */
+
+/* === Base === */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #FDF5E6 !important; /* Cream / OldLace Elegan */
+  color: #111;
+}
+
+/* === Navigation === */
+nav {
+  display: flex;
+  gap: 1.5rem;
+  background-color: #111;
+  padding: 1rem 2rem;
+  justify-content: center;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* === Hero / Slider === */
+/* KODE INI AKAN DI TIMPA OLEH KODE HERO DI ATAS, tapi biarkan saja dulu */
+/* Agar konsisten dengan struktur yang ada */
+/* Anda bisa menghapus bagian ini jika Hero yang baru sudah berfungsi */
+/*
+.hero {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f0f0e0, #ffffff);
+}
+*/
+.hero h1 { /* Ini adalah styling h1 di dalam hero, pastikan warnanya kontras */
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff; /* <-- PASTIKAN TEKS JUDUL WARNANYA PUTIH UNTUK KONTRAST */
+}
+.hero p {
+  font-size: 1.2rem;
+  color: #f0f0f0; /* <-- PASTIKAN TEKS PARAGRAF WARNANYA TERANG UNTUK KONTRAST */
+}
+.cta {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 1.6rem;
+  background-color: #007bff; /* Warna tombol CTA bisa disesuaikan */
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.cta:hover {
+  background-color: #0056b3;
+}
+
+/* ... (Sisa kode CSS Anda yang lainnya di bawah) ... */
+
 /* === Base === */
 body {
   font-family: 'Inter', sans-serif; /* Pastikan font 'Inter' tersedia, jika tidak, akan fallback ke sans-serif */

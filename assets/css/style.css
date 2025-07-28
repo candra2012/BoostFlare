@@ -6,10 +6,9 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background-color: #FDF5E6 !important; /* Cream / OldLace Elegan - PASTIKAN INI BEKERJA */
+  background-color: #E6E6FA !important; /* <-- Ini akan diterapkan ke SEMUA halaman */
   color: #111; /* Warna teks body default */
 }
-
 /* === Navigation === */
 nav {
   display: flex;

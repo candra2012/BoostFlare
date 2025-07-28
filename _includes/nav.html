@@ -1,21 +1,15 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">BoostFlare</a> {% comment %} Brand/Logo Anda di kiri atas {% endcomment %}
-
-    {# Tombol Hamburger (Offcanvas Toggler) - Pastikan ini di kiri atas jika itu yang diinginkan #}
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="/">BoostFlare</a> <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    {# Offcanvas Menu itu sendiri #}
     <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5> {% comment %} Judul di dalam offcanvas {% endcomment %}
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5> <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3"> {% comment %} flex-grow-1 pe-3 untuk space di kanan {% endcomment %}
-          <li class="nav-item">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3"> <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
@@ -30,9 +24,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/contact/">Contact</a>
           </li>
-          {% comment %} Anda bisa tambahkan item menu lain di sini, misalnya tombol atau dropdown {% endcomment %}
-        </ul>
-        {% comment %} Contoh form pencarian di dalam offcanvas (opsional) {% endcomment %}
+          </ul>
         {#
         <form class="d-flex mt-3" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

@@ -1,20 +1,45 @@
 /* assets/css/style.css */
 
-/* ... (Kode CSS Anda yang sudah ada di atas) ... */
+/* === Base === */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #FDF5E6 !important; /* Cream / OldLace Elegan - PASTIKAN INI BEKERJA */
+  color: #111; /* Warna teks body default */
+}
 
+/* === Navigation === */
+nav {
+  display: flex;
+  gap: 1.5rem;
+  background-color: #111;
+  padding: 1rem 2rem;
+  justify-content: center;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+nav a:hover {
+  text-decoration: underline;
+}
 
 /* === Hero Background Animation === */
 .hero {
   position: relative;
   overflow: hidden;
   padding: 8rem 0;
-  color: #fff; /* Pastikan teks di hero berwarna putih agar kontras dengan background animasi */
+  /* color: #fff; <-- Hapus ini dari sini, kita akan target elemen teks secara spesifik */
   z-index: 1;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
+  text-align: center; /* Pastikan konten di hero tengah */
 }
 
 .hero-bg-animated {
@@ -57,66 +82,269 @@
   }
 }
 
-
-/* === Base === */
-body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  background-color: #FDF5E6 !important; /* Cream / OldLace Elegan */
-  color: #111;
-}
-
-/* === Navigation === */
-nav {
-  display: flex;
-  gap: 1.5rem;
-  background-color: #111;
-  padding: 1rem 2rem;
-  justify-content: center;
-}
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-}
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* === Hero / Slider === */
-/* KODE INI AKAN DI TIMPA OLEH KODE HERO DI ATAS, tapi biarkan saja dulu */
-/* Agar konsisten dengan struktur yang ada */
-/* Anda bisa menghapus bagian ini jika Hero yang baru sudah berfungsi */
-/*
-.hero {
-  padding: 4rem 2rem;
-  text-align: center;
-  background: linear-gradient(135deg, #f0f0e0, #ffffff);
-}
-*/
-.hero h1 { /* Ini adalah styling h1 di dalam hero, pastikan warnanya kontras */
+/* === Hero Teks (h1, p.lead, .cta) - Target Warna Putih === */
+.hero-content h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #ffffff; /* <-- SUDAH PUTIH */
+  color: #ffffff !important; /* <-- JADI PUTIH */
 }
-.hero p.lead { /* <-- PERUBAHAN DI SINI UNTUK TEKS DESKRIPSI */
-  font-size: 1.5em; /* Biarkan ukuran tetap */
-  color: #ffffff !important; /* <-- TEKS DESKRIPSI DI HERO JADI PUTIH */
+.hero-content p.lead {
+  font-size: 1.5em;
+  color: #ffffff !important; /* <-- JADI PUTIH */
 }
-.cta {
+.hero-content .cta {
   display: inline-block;
   margin-top: 2rem;
   padding: 0.8rem 1.6rem;
-  background-color: #007bff; /* Warna tombol CTA bisa disesuaikan */
+  background-color: #007bff; /* Contoh warna tombol CTA */
   color: #fff;
   border-radius: 8px;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
-.cta:hover {
+.hero-content .cta:hover {
   background-color: #0056b3;
 }
 
-/* ... (Sisa kode CSS Anda yang lainnya di bawah) ... */
+
+/* === Section Titles === */
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* === Services Section === */
+#hero-services {
+  background-color: #FDF5E6;
+  color: #333;
+}
+#hero-services h1 {
+  font-size: 2.8rem;
+  color: #007bff;
+}
+#hero-services .btn {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+}
+#hero-services .btn:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+#our-offerings {
+  background-color: #ffffff;
+}
+.card {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+  transition: transform 0.2s ease-in-out;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card-title {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+.card-title i {
+  margin-right: 10px;
+}
+.card-text {
+  font-size: 0.95em;
+  color: #555;
+}
+.card-body ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+  text-align: left;
+}
+.card-body ul li {
+  margin-bottom: 5px;
+}
+.text-primary { color: #007bff; }
+.text-success { color: #28a745; }
+.text-info { color: #17a2b8; }
+.text-warning { color: #ffc107; }
+.text-danger { color: #dc3545; }
+.text-secondary { color: #6c757d; }
+
+
+/* === Trust Section (index.html) === */
+#trust {
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #FDF5E6;
+}
+
+/* === Benefits Section (index.html) === */
+#benefits {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #ffffff;
+}
+#benefits ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+#benefits li {
+  background-color: #ffffff;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex: 1 1 calc(33% - 30px);
+  max-width: 300px;
+  text-align: left;
+  font-weight: bold;
+  color: #343434;
+}
+
+/* === Client Testimonials (index.html) === */
+#client-testimonials {
+  background-color: #FDF5E6;
+}
+#client-testimonials .blockquote {
+  font-style: italic;
+  font-size: 1.15em;
+  color: #444;
+}
+#client-testimonials .blockquote-footer {
+  color: #777;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%);
+}
+.carousel-indicators [data-bs-target] {
+  background-color: #888;
+}
+.carousel-indicators .active {
+  background-color: #333;
+}
+
+
+/* === How to Order Section (index.html) === */
+#how-to-order {
+  background-color: #ffffff;
+}
+
+/* === Payment Options Section (index.html) === */
+#payment-options {
+  background-color: #FDF5E6;
+}
+
+/* === Our Work Process Section (index.html) === */
+#our-work-process {
+  background-color: #ffffff;
+}
+
+/* === Best Services Section (index.html) === */
+#best-services {
+  background-color: #FDF5E6;
+}
+
+
+/* === Call to Action Section (services.html) === */
+#call-to-action {
+  padding: 5rem 2rem;
+  background-color: #111;
+  color: #ffffff;
+  text-align: center;
+}
+#call-to-action h2 {
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+#call-to-action .btn-light {
+  background-color: #ffffff;
+  color: #111;
+  border: 2px solid #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+#call-to-action .btn-light:hover {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+/* === Footer === */
+footer {
+  background-color: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+}
+footer a {
+  color: #ccc;
+  text-decoration: underline;
+}
+footer a:hover {
+  color: #fff;
+}
+footer p {
+  margin-bottom: 0.5rem;
+}
+
+/* === Penyesuaian untuk Offcanvas Navbar === */
+.offcanvas {
+  width: 250px;
+}
+.offcanvas-body .nav-link {
+  color: #fff;
+  padding: 10px 0;
+}
+.offcanvas-body .nav-link.active {
+  color: #007bff;
+}
+
+
+/* === Responsive Adjustments === */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero h1 {
+    font-size: 2.5em;
+  }
+  .hero p {
+    font-size: 1.2em;
+  }
+  #benefits li {
+    flex: 1 1 calc(50% - 30px);
+  }
+  .col-md-4 {
+    width: 100%;
+    flex: none;
+  }
+}
+
+@media (max-width: 576px) {
+  nav {
+    padding: 1rem;
+  }
+  .hero {
+    padding: 2rem 1rem;
+  }
+  #benefits li {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  section {
+    padding: 30px 15px;
+  }
+  .card {
+    margin-bottom: 20px;
+  }
+}

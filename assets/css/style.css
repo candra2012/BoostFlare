@@ -102,7 +102,7 @@
 
 .hero-content p.lead {
   font-size: 1.25rem;
-  color: #495057;
+  color: #ffffff; /* ✅ jadi putih */
   margin-bottom: 2rem;
 }
 

@@ -1,6 +1,8 @@
+/* assets/css/style.css */
+
 /* === Base === */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif; /* Pastikan font 'Inter' tersedia, jika tidak, akan fallback ke sans-serif */
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -14,6 +16,7 @@ nav {
   gap: 1.5rem;
   background-color: #111;
   padding: 1rem 2rem;
+  justify-content: center; /* Menengahkan navigasi */
 }
 nav a {
   color: #fff;
@@ -46,6 +49,10 @@ nav a:hover {
   color: #fff;
   border-radius: 8px;
   text-decoration: none;
+  transition: background-color 0.3s ease; /* Tambahan transisi */
+}
+.cta:hover {
+  background-color: #333; /* Perubahan warna hover */
 }
 
 /* === Section Titles === */
@@ -56,46 +63,122 @@ section h2 {
 }
 
 /* === Services Section === */
-#services {
-  max-width: 900px;
-  margin: 3rem auto;
-  padding: 0 1rem;
+/* Menggunakan kelas Bootstrap "container", "row", "col-md-4", "card" */
+#hero-services { /* Dari services.html */
+  background-color: #f8f9fa;
+  color: #333;
 }
-#services ul {
-  list-style: none;
-  padding: 0;
+#hero-services h1 {
+  font-size: 2.8rem;
+  color: #007bff; /* Warna biru Bootstrap */
 }
-#services li {
-  margin-bottom: 1rem;
-  background: #f9f9f9;
-  padding: 1rem;
-  border-radius: 6px;
+#hero-services .btn { /* Tombol di hero services */
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
 }
-
-/* === About Section === */
-#about {
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 0 1rem;
-  text-align: center;
+#hero-services .btn:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
 }
 
-/* === Dashboard Section === */
-#dashboard {
-  background-color: #f4f4f4;
+#our-offerings { /* Dari services.html */
+  background-color: #ffffff;
+}
+.card {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+  transition: transform 0.2s ease-in-out;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card-title {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  display: flex; /* Untuk ikon */
+  align-items: center;
+}
+.card-title i {
+  margin-right: 10px;
+}
+.card-text {
+  font-size: 0.95em;
+  color: #555;
+}
+.card-body ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+  text-align: left;
+}
+.card-body ul li {
+  margin-bottom: 5px;
+}
+/* Warna teks untuk ikon */
+.text-primary { color: #007bff; }
+.text-success { color: #28a745; }
+.text-info { color: #17a2b8; }
+.text-warning { color: #ffc107; }
+.text-danger { color: #dc3545; }
+.text-secondary { color: #6c757d; }
+
+
+/* === Trust Section (index.html) === */
+#trust {
   padding: 3rem 2rem;
   text-align: center;
+  background-color: #e9ecef; /* Latar belakang abu-abu muda */
 }
 
-/* === Blog Section === */
-#blog {
-  max-width: 900px;
-  margin: 3rem auto;
-  padding: 0 1rem;
+/* === Benefits Section (index.html) === */
+#benefits {
+  padding: 4rem 2rem;
+  text-align: center;
 }
-#blog article {
-  border-bottom: 1px solid #eee;
-  padding: 1rem 0;
+#benefits ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px; /* Spasi antar item */
+  margin-top: 30px;
+}
+#benefits li {
+  background-color: #ffffff;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex: 1 1 calc(33% - 30px); /* 3 kolom pada layar besar */
+  max-width: 300px;
+  text-align: left;
+  font-weight: bold;
+  color: #343a40;
+}
+
+/* === Call to Action Section (services.html) === */
+#call-to-action {
+  padding: 5rem 2rem;
+  background-color: #111;
+  color: #ffffff;
+  text-align: center;
+}
+#call-to-action h2 {
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+#call-to-action .btn-light {
+  background-color: #ffffff;
+  color: #111;
+  border: 2px solid #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+#call-to-action .btn-light:hover {
+  background-color: transparent;
+  color: #ffffff;
 }
 
 /* === Footer === */
@@ -109,4 +192,50 @@ footer {
 footer a {
   color: #ccc;
   text-decoration: underline;
+}
+footer a:hover {
+  color: #fff;
+}
+footer p {
+  margin-bottom: 0.5rem;
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1em;
+  }
+  #benefits li {
+    flex: 1 1 calc(50% - 30px); /* 2 kolom pada layar sedang */
+  }
+  .col-md-4 { /* Bootstrap col adjustment */
+    width: 100%;
+    flex: none;
+  }
+}
+
+@media (max-width: 576px) {
+  nav {
+    padding: 1rem;
+  }
+  .hero {
+    padding: 2rem 1rem;
+  }
+  #benefits li {
+    flex: 1 1 100%; /* 1 kolom pada layar kecil */
+    max-width: 100%;
+  }
+  section {
+    padding: 30px 15px;
+  }
+  .card {
+    margin-bottom: 20px; /* Spasi antar kartu di layar kecil */
+  }
 }

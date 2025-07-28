@@ -67,7 +67,7 @@
 }
 </style>
 
-/* === 2. FEATURE SECTION GLOBAL STYLE === */
+/* === Feature Section Background === */
 .feature-section {
-  background-color: lavenderblush;
+  background-color: lavenderblush !important;
 }

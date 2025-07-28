@@ -1,35 +1,31 @@
 /* assets/css/style.css */
 
-/* === Base === */
-body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  background-color: #E6E6FA !important; /* <-- Lavender Blush */
-  color: #111;
-}
+/* ... (Kode CSS Anda di atas) ... */
 
-/* ... kode CSS lainnya ... */
 
 /* === Hero Background Animation === */
 .hero {
   position: relative;
   overflow: hidden;
   padding: 8rem 0;
+  /* color: #fff; */ /* Ini bisa dihapus jika h1 dan p.lead sudah spesifik */
   z-index: 1;
+  /* background: none !important; */ /* <-- Tambahkan ini untuk memastikan tidak ada background lama */
+  /* ATAU hapus properti background yang lama di sini jika ada */
 }
+
 .hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
 }
+
 .hero-bg-animated {
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
+  top: 0;   /* <-- PERUBAHAN DI SINI: Mulai dari 0% */
+  left: 0;  /* <-- PERUBAHAN DI SINI: Mulai dari 0% */
+  width: 100%; /* <-- PERUBAHAN DI SINI: Lebar 100% dari parent (hero) */
+  height: 100%; /* <-- PERUBAHAN DI SINI: Tinggi 100% dari parent (hero) */
   background: linear-gradient(
     45deg,
     #ff0084, /* Warna 1 */
@@ -41,31 +37,53 @@ body {
   animation: gradientRotate 15s ease infinite;
   z-index: 0;
   opacity: 0.8;
+  border-radius: 0; /* Pastikan tidak ada border-radius yang menyembunyikan sudut */
 }
+
 @keyframes gradientRotate {
-  0% { transform: rotate(0deg); background-position: 0% 50%; }
-  25% { background-position: 50% 100%; }
-  50% { transform: rotate(360deg); background-position: 100% 50%; }
-  75% { background-position: 50% 0%; }
-  100% { transform: rotate(720deg); background-position: 0% 50%; }
+  0% {
+    transform: rotate(0deg);
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 100%;
+  }
+  50% {
+    transform: rotate(360deg);
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+  100% {
+    transform: rotate(720deg);
+    background-position: 0% 50%;
+  }
 }
 
 /* === Hero Teks (h1, p.lead, .cta) - Target Warna Putih === */
-.hero-content h1 { color: #ffffff !important; }
-.hero-content p.lead { color: #ffffff !important; }
-.hero-content .cta { background-color: #007bff; color: #fff; border-radius: 8px; text-decoration: none; transition: background-color 0.3s ease; }
-.hero-content .cta:hover { background-color: #0056b3; }
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff !important;
+}
+.hero-content p.lead {
+  font-size: 1.5em;
+  color: #ffffff !important;
+}
+.hero-content .cta {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 1.6rem;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.cta:hover {
+  background-color: #0056b3;
+}
 
 
-/* Pastikan section ini juga memiliki background yang jelas */
-#introduction-boostflare { background-color: #E6E6FA; /* Sama dengan body */ }
-#how-we-work { background-color: #ffffff; /* Kontras dengan body */ }
-#our-offerings { background-color: #E6E6FA; }
-#why-boostflare { background-color: #ffffff; }
-#client-testimonials { background-color: #E6E6FA; }
-#how-to-order { background-color: #ffffff; }
-#payment-options { background-color: #E6E6FA; }
-#our-work-process { background-color: #ffffff; }
-#best-services { background-color: #E6E6FA; }
-
-/* ... sisa kode CSS lainnya ... */
+/* ... (Sisa kode CSS Anda yang lainnya di bawah) ... */

@@ -114,6 +114,30 @@
   margin-bottom: 2rem;
 }
 
+.hero-text-overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* 🔥 Gelap transparan */
+  padding: 2rem;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.hero-text-overlay h2,
+.hero-text-overlay p,
+.hero-text-overlay .cta {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+
+.hero-text-overlay h2 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-text-overlay p {
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
 .cta {
   display: inline-block;
   padding: 0.8rem 1.6rem;

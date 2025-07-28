@@ -15,7 +15,7 @@
 
 {# Canonical URL untuk SEO, menghindari konten duplikat #}
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-{# Link Atom Feed untuk blog #}
+{# Link Atom Feed untuk blog (diperlukan jika pakai jekyll-feed) #}
 <link type="application/atom+xml" rel="alternate" href="{{ "/feed.xml" | relative_url }}" title="{{ site.title | escape }}" />
 
 {# hreflang tags untuk SEO internasional #}

@@ -69,5 +69,8 @@
 
 /* === Feature Section Background === */
 .feature-section {
-  background-color: lavenderblush !important;
+  background-color: #FFF0F5; /* lavenderblush */
+  padding: 60px 20px; /* Tambah padding biar rapi */
+  text-align: center; /* Konsisten dengan hero */
+  min-height: 300px; /* Biar section terlihat */
 }

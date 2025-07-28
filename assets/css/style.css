@@ -2,8 +2,12 @@
 
 /* === Base === */
 body {
-  /* ... properti lain ... */
-  background-color: #FCFBF8 !important; /* Tambahkan !important */
+  font-family: 'Inter', sans-serif; /* Pastikan font 'Inter' tersedia, jika tidak, akan fallback ke sans-serif */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #FDF5E6 !important; /* <-- PERUBAHAN DI SINI: Cream / OldLace Elegan */
+  color: #111; /* Warna teks body, pastikan kontras yang baik */
 }
 
 /* === Navigation === */
@@ -27,7 +31,7 @@ nav a:hover {
 .hero {
   padding: 4rem 2rem;
   text-align: center;
-  background: linear-gradient(135deg, #f3f3f3, #ffffff); /* Latar belakang hero tetap cerah */
+  background: linear-gradient(135deg, #f0f0e0, #ffffff); /* Latar belakang hero sedikit disesuaikan agar serasi */
 }
 .hero h1 {
   font-size: 2.5rem;
@@ -61,7 +65,7 @@ section h2 {
 /* === Services Section === */
 /* Menggunakan kelas Bootstrap "container", "row", "col-md-4", "card" */
 #hero-services { /* Dari services.html */
-  background-color: #f8f9fa; /* Ini bisa Anda ubah juga jika mau disamakan dengan body */
+  background-color: #FDF5E6; /* Disamakan dengan body agar seamless */
   color: #333;
 }
 #hero-services h1 {
@@ -79,7 +83,7 @@ section h2 {
 }
 
 #our-offerings { /* Dari services.html */
-  background-color: #ffffff; /* Ini juga bisa diubah */
+  background-color: #ffffff; /* Biarkan putih agar ada sedikit kontras atau bisa diubah ke #FDF5E6 juga */
 }
 .card {
   border: none;
@@ -126,13 +130,14 @@ section h2 {
 #trust {
   padding: 3rem 2rem;
   text-align: center;
-  background-color: #e9ecef; /* Latar belakang abu-abu muda */
+  background-color: #FDF5E6; /* Disamakan dengan body */
 }
 
 /* === Benefits Section (index.html) === */
 #benefits {
   padding: 4rem 2rem;
   text-align: center;
+  background-color: #ffffff; /* Biarkan putih agar ada sedikit kontras */
 }
 #benefits ul {
   list-style: none;
@@ -152,8 +157,53 @@ section h2 {
   max-width: 300px;
   text-align: left;
   font-weight: bold;
-  color: #343a40;
+  color: #343434; /* Warna teks lebih gelap sedikit */
 }
+
+/* === Client Testimonials (index.html) === */
+#client-testimonials {
+  background-color: #FDF5E6; /* Disamakan dengan body */
+}
+#client-testimonials .blockquote {
+  font-style: italic;
+  font-size: 1.15em;
+  color: #444;
+}
+#client-testimonials .blockquote-footer {
+  color: #777;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%); /* Membuat ikon panah putih agar terlihat di latar belakang gelap/transparan */
+}
+.carousel-indicators [data-bs-target] {
+  background-color: #888; /* Warna dot indikator */
+}
+.carousel-indicators .active {
+  background-color: #333; /* Warna dot indikator aktif */
+}
+
+
+/* === How to Order Section (index.html) === */
+#how-to-order {
+  background-color: #ffffff; /* Biarkan putih */
+}
+
+/* === Payment Options Section (index.html) === */
+#payment-options {
+  background-color: #FDF5E6; /* Disamakan dengan body */
+}
+
+/* === Our Work Process Section (index.html) === */
+#our-work-process {
+  background-color: #ffffff; /* Biarkan putih */
+}
+
+/* === Best Services Section (index.html) === */
+#best-services {
+  background-color: #FDF5E6; /* Disamakan dengan body */
+}
+
 
 /* === Call to Action Section (services.html) === */
 #call-to-action {

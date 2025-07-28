@@ -1,1 +1,59 @@
+/* 1. Style Hero Section */
 
+<style>
+.hero {
+  padding: 100px 15px;
+  background: linear-gradient(90deg, #d4145a, #fbb03b); /* atau background kamu */
+  color: white;
+  text-align: center;
+}
+.hero .hero-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.hero .hero-desc {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+}
+.hero .cta {
+  background: white;
+  color: #d4145a;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.hero .cta:hover {
+  background: #eee;
+}
+
+  
+.hero {
+  position: relative;
+  background-image: linear-gradient(131deg, rgba(186, 186, 186, 0.01) 0%, rgba(186, 186, 186, 0.01) 16.667%,rgba(192, 192, 192, 0.01) 16.667%, rgba(192, 192, 192, 0.01) 33.334%,rgba(48, 48, 48, 0.01) 33.334%, rgba(48, 48, 48, 0.01) 50.001%,rgba(33, 33, 33, 0.01) 50.001%, rgba(33, 33, 33, 0.01) 66.668%,rgba(182, 182, 182, 0.01) 66.668%, rgba(182, 182, 182, 0.01) 83.335%,rgba(211, 211, 211, 0.01) 83.335%, rgba(211, 211, 211, 0.01) 100%),
+                    linear-gradient(148deg, rgba(48, 48, 48, 0.01) 0%, rgba(48, 48, 48, 0.01) 16.667%,rgba(178, 178, 178, 0.01) 16.667%, rgba(178, 178, 178, 0.01) 33.334%,rgba(192, 192, 192, 0.01) 33.334%, rgba(192, 192, 192, 0.01) 50.001%,rgba(237, 237, 237, 0.01) 50.001%, rgba(237, 237, 237, 0.01) 66.668%,rgba(194, 194, 194, 0.01) 66.668%, rgba(194, 194, 194, 0.01) 83.335%,rgba(227, 227, 227, 0.01) 83.335%, rgba(227, 227, 227, 0.01) 100%),
+                    linear-gradient(90deg, rgb(225, 15, 180), rgb(78, 198, 243));
+  background-size: 400% 400%;
+  animation: bgMove 30s ease infinite;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 8rem 0;
+  z-index: 1;
+}
+
+@keyframes bgMove {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero .lead {
+  color: white;
+  font-weight: bold;
+}
+.hero h2 {
+  color: white;
+}
+</style>

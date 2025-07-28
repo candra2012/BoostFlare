@@ -7,12 +7,14 @@
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 8rem 0; /* Padding tetap untuk memberi ruang konten */
+  padding: 8rem 0;
   z-index: 1;
-  /* background-color: #E6E6FA; */ /* Ini bisa dihapus jika hero-bg-animated bekerja */
   border-radius: 0;
-}
 
+  min-height: 100vh; /* 🔥 Tambahkan ini */
+  display: flex;
+  align-items: center;
+}
 .hero-content {
   position: relative;
   z-index: 2;

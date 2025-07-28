@@ -6,21 +6,19 @@
 <body>
 
   <header class="site-header">
-    {% comment %} Ini akan memanggil Navbar Offcanvas yang baru {% endcomment %} {# <--- PERUBAHAN DI SINI #}
+    {# <-- PERUBAHAN DI SINI #}
     {% include nav.html %}
   </header>
 
   <main class="page-content" aria-label="Content">
     <div class="wrapper">
-      {{ content }} {# Ini adalah tempat konten spesifik dari setiap halaman (Markdown/HTML) akan disisipkan #}
-    </div>
+      {{ content }} </div>
   </main>
 
   <footer class="site-footer">
     {% include footer.html %}
   </footer>
 
-  {# Bootstrap JavaScript Bundle - HARUS ADA di sini untuk Offcanvas berfungsi #}
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>

@@ -1,17 +1,15 @@
 /* assets/css/style.css */
 
-/* ... (Kode CSS Anda di atas) ... */
+/* ... (Kode CSS Anda yang sudah ada di atas) ... */
 
 
 /* === Hero Background Animation === */
 .hero {
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* Penting agar animasi tidak keluar dari batas hero */
   padding: 8rem 0;
-  /* color: #fff; */ /* Ini bisa dihapus jika h1 dan p.lead sudah spesifik */
   z-index: 1;
-  /* background: none !important; */ /* <-- Tambahkan ini untuk memastikan tidak ada background lama */
-  /* ATAU hapus properti background yang lama di sini jika ada */
+  /* background: none !important; */ /* Pastikan tidak ada background lain dari .hero */
 }
 
 .hero-content {
@@ -22,10 +20,10 @@
 
 .hero-bg-animated {
   position: absolute;
-  top: 0;   /* <-- PERUBAHAN DI SINI: Mulai dari 0% */
-  left: 0;  /* <-- PERUBAHAN DI SINI: Mulai dari 0% */
-  width: 100%; /* <-- PERUBAHAN DI SINI: Lebar 100% dari parent (hero) */
-  height: 100%; /* <-- PERUBAHAN DI SINI: Tinggi 100% dari parent (hero) */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(
     45deg,
     #ff0084, /* Warna 1 */
@@ -37,26 +35,30 @@
   animation: gradientRotate 15s ease infinite;
   z-index: 0;
   opacity: 0.8;
-  border-radius: 0; /* Pastikan tidak ada border-radius yang menyembunyikan sudut */
+  border-radius: 0;
+
+  /* <-- PERUBAHAN KRUSIAL DI SINI UNTUK MEMASTIKAN CAKUPAN PENUH */
+  transform: scale(1.5); /* Memperbesar elemen background sedikit agar menutupi sudut */
+  transform-origin: center center; /* Memastikan penskalaan dari tengah */
 }
 
 @keyframes gradientRotate {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(0deg) scale(1.5); /* <-- Sesuaikan juga transform di keyframes */
     background-position: 0% 50%;
   }
   25% {
     background-position: 50% 100%;
   }
   50% {
-    transform: rotate(360deg);
+    transform: rotate(360deg) scale(1.5); /* <-- Sesuaikan juga transform di keyframes */
     background-position: 100% 50%;
   }
   75% {
     background-position: 50% 0%;
   }
   100% {
-    transform: rotate(720deg);
+    transform: rotate(720deg) scale(1.5); /* <-- Sesuaikan juga transform di keyframes */
     background-position: 0% 50%;
   }
 }

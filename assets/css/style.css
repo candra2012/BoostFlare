@@ -2,12 +2,8 @@
 
 /* === Base === */
 body {
-  font-family: 'Inter', sans-serif; /* Pastikan font 'Inter' tersedia, jika tidak, akan fallback ke sans-serif */
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  background-color: #FCFBF8; /* <-- PERUBAHAN DI SINI: Soft Off-White/Bone White Elegan */
-  color: #111; /* Warna teks body, pastikan kontras yang baik */
+  /* ... properti lain ... */
+  background-color: #FCFBF8 !important; /* Tambahkan !important */
 }
 
 /* === Navigation === */

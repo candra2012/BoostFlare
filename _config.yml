@@ -8,7 +8,7 @@ author: "BoostFlare Team" # Nama organisasi
 email: "candrabudiana@gmail.com" # Alamat email kontak Anda
 
 # Domain situs Anda. PENTING: Gunakan HTTPS!
-url: "https://www.boostflare.biz.id" # Domain aktif BoostFlare
+url: "https://boostflare.biz.id" # Domain aktif BoostFlare (tanpa www di sini kecuali Anda ingin itu jadi kanonikal)
 baseurl: "" # Kosongkan jika situs Anda di root domain (seperti boostflare.biz.id)
 
 # Bahasa utama situs Anda, difokuskan pada Bahasa Inggris Amerika Serikat.
@@ -51,6 +51,7 @@ plugins:
   - jekyll-feed       # Untuk feed RSS/Atom blog Anda
   - jekyll-sitemap    # Untuk sitemap.xml
   - jekyll-seo-tag    # WAJIB untuk SEO dan metadata
+  - jekyll-paginate   # Aktifkan jika Anda membuat blog dengan banyak post
 
 # Konfigurasi jekyll-paginate (Aktifkan jika Anda membuat blog dengan banyak post)
 # paginate: 10 # Contoh: 10 posting per halaman

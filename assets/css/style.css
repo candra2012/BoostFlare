@@ -1,79 +1,50 @@
-/* assets/css/style.css */
-
-/* ... (Kode CSS Anda yang sudah ada di atas) ... */
-
-
-/* === Hero Background Animation === */
+/* === HERO SECTION WITH SOFT BACKGROUND ANIMATION === */
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 8rem 0;
-  z-index: 1;
-  border-radius: 0;
-
-  min-height: 100vh; /* 🔥 Tambahkan ini */
-  display: flex;
-  align-items: center;
-}
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 0 15px; /* Memberikan padding horizontal dasar */
-  max-width: 960px; /* Batasi lebar konten hero */
-  margin-left: auto;
-  margin-right: auto;
+  padding: 6rem 1rem;
+  background-color: transparent;
 }
 
 .hero-bg-animated {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    45deg,
-    #ff0084, /* Warna 1 */
-    #3300ff, /* Warna 2 */
-    #00ff99, /* Warna 3 */
-    #ff0084  /* Kembali ke Warna 1 untuk looping seamless */
-  );
-  background-size: 400% 400%; /* Cukup besar agar rotasi mulus */
-  animation: gradientShiftAndRotate 20s ease infinite;
+  inset: 0;
   z-index: 0;
-  opacity: 0.8;
-  border-radius: 0;
-
-  /* HAPUS properti filter dan translateZ(0) yang menyebabkan distorsi */
-  /* filter: blur(0); */
-  /* -webkit-filter: blur(0); */
-  /* transform: translateZ(0); */
-  /* -webkit-transform: translateZ(0); */
-  /* will-change: transform, background-position, filter; */
+  background: linear-gradient(45deg, #fbeaff, #e0f7ff, #ecfff2, #fbeaff);
+  background-size: 400% 400%;
+  animation: softRotateGradient 30s ease infinite;
+  opacity: 0.7;
 }
 
-/* @keyframes gradientShiftAndRotate tidak berubah dari yang terakhir */
-@keyframes gradientShiftAndRotate {
-  0% { transform: rotate(0deg); background-position: 0% 0%; }
-  25% { background-position: 100% 0%; }
-  50% { transform: rotate(360deg); background-position: 100% 100%; }
-  75% { background-position: 0% 100%; }
-  100% { transform: rotate(720deg); background-position: 0% 0%; }
+@keyframes softRotateGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* === Hero Teks (h1, p.lead, .cta) - Target Warna Putih === */
-.hero-content h1 {
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 15px;
+}
+
+.hero-content h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #ffffff !important;
+  color: #212529;
 }
+
 .hero-content p.lead {
-  font-size: 1.5em;
-  color: #ffffff !important;
+  font-size: 1.25rem;
+  color: #495057;
+  margin-bottom: 2rem;
 }
-.hero-content .cta {
+
+.cta {
   display: inline-block;
-  margin-top: 2rem;
   padding: 0.8rem 1.6rem;
   background-color: #007bff;
   color: #fff;
@@ -81,9 +52,7 @@
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
+
 .cta:hover {
   background-color: #0056b3;
 }
-
-
-/* ... (Sisa kode CSS Anda yang lainnya di bawah) ... */

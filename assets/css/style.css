@@ -1,13 +1,11 @@
-/* Set lavenderblush background untuk semua halaman */
 body {
-  background-color: #FFF0F5; /* lavenderblush */
+  background-color: lavenderblush;
 }
 
-/* Hero section tetap dengan gradient animasi */
+/* Khusus Hero tetap pakai background aslinya */
 .hero {
-  position: relative;
-  background-image: linear-gradient(131deg, rgba(186, 186, 186, 0.01) 0%, rgba(186, 186, 186, 0.01) 16.667%, rgba(192, 192, 192, 0.01) 16.667%, rgba(192, 192, 192, 0.01) 33.334%, rgba(48, 48, 48, 0.01) 33.334%, rgba(48, 48, 48, 0.01) 50.001%, rgba(33, 33, 33, 0.01) 50.001%, rgba(33, 33, 33, 0.01) 66.668%, rgba(182, 182, 182, 0.01) 66.668%, rgba(182, 182, 182, 0.01) 83.335%, rgba(211, 211, 211, 0.01) 83.335%, rgba(211, 211, 211, 0.01) 100%),
-                    linear-gradient(148deg, rgba(48, 48, 48, 0.01) 0%, rgba(48, 48, 48, 0.01) 16.667%, rgba(178, 178, 178, 0.01) 16.667%, rgba(178, 178, 178, 0.01) 33.334%, rgba(192, 192, 192, 0.01) 33.334%, rgba(192, 192, 192, 0.01) 50.001%, rgba(237, 237, 237, 0.01) 50.001%, rgba(237, 237, 237, 0.01) 66.668%, rgba(194, 194, 194, 0.01) 66.668%, rgba(194, 194, 194, 0.01) 83.335%, rgba(227, 227, 227, 0.01) 83.335%, rgba(227, 227, 227, 0.01) 100%),
+  background-image: linear-gradient(131deg, rgba(186, 186, 186, 0.01) 0%, rgba(186, 186, 186, 0.01) 16.667%,rgba(192, 192, 192, 0.01) 16.667%, rgba(192, 192, 192, 0.01) 33.334%,rgba(48, 48, 48, 0.01) 33.334%, rgba(48, 48, 48, 0.01) 50.001%,rgba(33, 33, 33, 0.01) 50.001%, rgba(33, 33, 33, 0.01) 66.668%,rgba(182, 182, 182, 0.01) 66.668%, rgba(182, 182, 182, 0.01) 83.335%,rgba(211, 211, 211, 0.01) 83.335%, rgba(211, 211, 211, 0.01) 100%),
+                    linear-gradient(148deg, rgba(48, 48, 48, 0.01) 0%, rgba(48, 48, 48, 0.01) 16.667%,rgba(178, 178, 178, 0.01) 16.667%, rgba(178, 178, 178, 0.01) 33.334%,rgba(192, 192, 192, 0.01) 33.334%, rgba(192, 192, 192, 0.01) 50.001%,rgba(237, 237, 237, 0.01) 50.001%, rgba(237, 237, 237, 0.01) 66.668%,rgba(194, 194, 194, 0.01) 66.668%, rgba(194, 194, 194, 0.01) 83.335%,rgba(227, 227, 227, 0.01) 83.335%, rgba(227, 227, 227, 0.01) 100%),
                     linear-gradient(90deg, rgb(225, 15, 180), rgb(78, 198, 243));
   background-size: 400% 400%;
   animation: bgMove 30s ease infinite;
@@ -15,75 +13,11 @@ body {
   background-position: center;
   padding: 8rem 0;
   z-index: 1;
+  color: white;
 }
 
 @keyframes bgMove {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-}
-
-.hero-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.hero h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: white;
-}
-
-.hero p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  color: white;
-}
-
-.hero .cta {
-  background-color: white;
-  color: #d63087;
-  font-weight: bold;
-  padding: 12px 24px;
-  border-radius: 10px;
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-}
-
-.hero .cta:hover {
-  background-color: #fce4ec;
-}
-
-.hero .lead {
-  color: white;
-  font-weight: bold;
-}
-
-/* Feature section tanpa background khusus, ikut body */
-.feature-section {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.feature-section h2,
-.feature-section p {
-  color: #2c3e50; /* Kontras untuk teks */
-}
-
-/* Pastikan Bootstrap tidak menimpa */
-.feature-section .container,
-.feature-section .row {
-  background: none;
-}
-
-/* Responsivitas untuk mobile */
-@media (max-width: 768px) {
-  .hero {
-    padding: 4rem 10px;
-  }
-  .feature-section {
-    padding: 40px 10px;
-  }
 }

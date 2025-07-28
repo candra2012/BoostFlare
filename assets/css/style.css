@@ -6,52 +6,51 @@
 /* === Hero Background Animation === */
 .hero {
   position: relative;
-  overflow: hidden; /* Tetap penting untuk menyembunyikan bagian luar */
-  padding: 8rem 0;
+  overflow: hidden;
+  padding: 8rem 0; /* Padding tetap untuk memberi ruang konten */
   z-index: 1;
-  background-color: #E6E6FA; /* Background fallback / jika animasi tidak terlihat */
-  border-radius: 0 !important;
+  /* background-color: #E6E6FA; */ /* Ini bisa dihapus jika hero-bg-animated bekerja */
+  border-radius: 0;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 0 15px;
-  max-width: 960px;
+  padding: 0 15px; /* Memberikan padding horizontal dasar */
+  max-width: 960px; /* Batasi lebar konten hero */
   margin-left: auto;
   margin-right: auto;
 }
 
 .hero-bg-animated {
   position: absolute;
-  top: -100px;
-  left: -100px;
-  width: calc(100% + 200px);
-  height: calc(100% + 200px);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(
     45deg,
-    #ff0084,
-    #3300ff,
-    #00ff99,
-    #ff0084
+    #ff0084, /* Warna 1 */
+    #3300ff, /* Warna 2 */
+    #00ff99, /* Warna 3 */
+    #ff0084  /* Kembali ke Warna 1 untuk looping seamless */
   );
-  background-size: 800% 800%;
+  background-size: 400% 400%; /* Cukup besar agar rotasi mulus */
   animation: gradientShiftAndRotate 20s ease infinite;
   z-index: 0;
   opacity: 0.8;
-  border-radius: 0 !important;
+  border-radius: 0;
 
-  /* <-- PERUBAHAN AGRESIV DI SINI UNTUK RENDERING --> */
-  /* Ini memaksa rendering GPU yang mungkin mengatasi pemotongan */
-  filter: blur(0);
-  -webkit-filter: blur(0); /* Untuk kompatibilitas browser lama */
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0); /* Untuk kompatibilitas browser lama */
-  will-change: transform, background-position, filter; /* Memberitahu browser untuk mengoptimalkan */
+  /* HAPUS properti filter dan translateZ(0) yang menyebabkan distorsi */
+  /* filter: blur(0); */
+  /* -webkit-filter: blur(0); */
+  /* transform: translateZ(0); */
+  /* -webkit-transform: translateZ(0); */
+  /* will-change: transform, background-position, filter; */
 }
 
-/* @keyframes gradientShiftAndRotate tidak berubah */
+/* @keyframes gradientShiftAndRotate tidak berubah dari yang terakhir */
 @keyframes gradientShiftAndRotate {
   0% { transform: rotate(0deg); background-position: 0% 0%; }
   25% { background-position: 100% 0%; }
@@ -59,5 +58,30 @@
   75% { background-position: 0% 100%; }
   100% { transform: rotate(720deg); background-position: 0% 0%; }
 }
+
+/* === Hero Teks (h1, p.lead, .cta) - Target Warna Putih === */
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff !important;
+}
+.hero-content p.lead {
+  font-size: 1.5em;
+  color: #ffffff !important;
+}
+.hero-content .cta {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 1.6rem;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.cta:hover {
+  background-color: #0056b3;
+}
+
 
 /* ... (Sisa kode CSS Anda yang lainnya di bawah) ... */

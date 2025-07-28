@@ -6,24 +6,29 @@
 /* === Hero Background Animation === */
 .hero {
   position: relative;
-  overflow: hidden; /* Tetap penting */
+  overflow: hidden; /* Tetap penting untuk menyembunyikan bagian luar */
   padding: 8rem 0;
   z-index: 1;
-  background-color: #E6E6FA; /* <-- Background hero, fallback jika animasi bermasalah */
+  background-color: #E6E6FA; /* Background fallback / jika animasi tidak terlihat */
+  border-radius: 0 !important;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
+  padding: 0 15px; /* Memberikan padding horizontal dasar jika container tidak bekerja penuh */
+  max-width: 960px; /* Batasi lebar agar konten tidak terlalu lebar */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-bg-animated {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; /* <-- KEMBALIKAN KE 100% */
-  height: 100%; /* <-- KEMBALIKAN KE 100% */
+  top: -100px; /* Geser sedikit ke luar agar aman */
+  left: -100px; /* Geser sedikit ke luar agar aman */
+  width: calc(100% + 200px); /* Lebar 100% + buffer */
+  height: calc(100% + 200px); /* Tinggi 100% + buffer */
   background: linear-gradient(
     45deg,
     #ff0084, /* Warna 1 */
@@ -31,14 +36,14 @@
     #00ff99, /* Warna 3 */
     #ff0084  /* Kembali ke Warna 1 untuk looping seamless */
   );
-  background-size: 400% 400%; /* <-- Dibuat SANGAT BESAR untuk menutupi putaran */
-  animation: gradientShiftAndRotate 20s ease infinite; /* <-- NAMA ANIMASI DIUBAH */
+  background-size: 800% 800%; /* <-- PERUBAHAN KRUSIAL DI SINI: UKURAN GRADIENT SANGAT BESAR */
+  animation: gradientShiftAndRotate 20s ease infinite;
   z-index: 0;
   opacity: 0.8;
-  border-radius: 0;
+  border-radius: 0 !important;
 }
 
-/* @keyframes yang baru */
+/* @keyframes gradientShiftAndRotate */
 @keyframes gradientShiftAndRotate {
   0% {
     transform: rotate(0deg);
@@ -55,34 +60,9 @@
     background-position: 0% 100%;
   }
   100% {
-    transform: rotate(720deg); /* Bisa 360deg atau 720deg */
+    transform: rotate(720deg); /* Bisa 360deg atau 720deg untuk 2 putaran */
     background-position: 0% 0%;
   }
 }
-
-/* === Hero Teks (h1, p.lead, .cta) - Target Warna Putih === */
-.hero-content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #ffffff !important;
-}
-.hero-content p.lead {
-  font-size: 1.5em;
-  color: #ffffff !important;
-}
-.hero-content .cta {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 0.8rem 1.6rem;
-  background-color: #007bff;
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-.cta:hover {
-  background-color: #0056b3;
-}
-
 
 /* ... (Sisa kode CSS Anda yang lainnya di bawah) ... */

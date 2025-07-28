@@ -1,38 +1,13 @@
 /* assets/css/style.css */
 
-/* ... (Kode CSS Anda yang sebelumnya) ... */
-
-/* Menyesuaikan Navbar Bootstrap */
-.navbar {
-  margin-bottom: 20px; /* Contoh: Tambah sedikit spasi di bawah navbar */
-}
-.navbar-brand {
-  font-size: 1.8rem;
-  font-weight: bold;
-}
-.navbar-nav .nav-link {
-  padding: 0.5rem 1rem;
-}
-
-/* Jika Anda ingin mengubah warna ikon hamburger */
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-}
-.navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.1) !important;
-}
-
-/* ... (Kode CSS Anda yang lainnya) ... */
-
-
 /* === Base === */
 body {
   font-family: 'Inter', sans-serif; /* Pastikan font 'Inter' tersedia, jika tidak, akan fallback ke sans-serif */
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background-color: #fff;
-  color: #111;
+  background-color: #FCFBF8; /* <-- PERUBAHAN DI SINI: Soft Off-White/Bone White Elegan */
+  color: #111; /* Warna teks body, pastikan kontras yang baik */
 }
 
 /* === Navigation === */
@@ -56,7 +31,7 @@ nav a:hover {
 .hero {
   padding: 4rem 2rem;
   text-align: center;
-  background: linear-gradient(135deg, #f3f3f3, #ffffff);
+  background: linear-gradient(135deg, #f3f3f3, #ffffff); /* Latar belakang hero tetap cerah */
 }
 .hero h1 {
   font-size: 2.5rem;
@@ -74,10 +49,10 @@ nav a:hover {
   color: #fff;
   border-radius: 8px;
   text-decoration: none;
-  transition: background-color 0.3s ease; /* Tambahan transisi */
+  transition: background-color 0.3s ease;
 }
 .cta:hover {
-  background-color: #333; /* Perubahan warna hover */
+  background-color: #333;
 }
 
 /* === Section Titles === */
@@ -90,7 +65,7 @@ section h2 {
 /* === Services Section === */
 /* Menggunakan kelas Bootstrap "container", "row", "col-md-4", "card" */
 #hero-services { /* Dari services.html */
-  background-color: #f8f9fa;
+  background-color: #f8f9fa; /* Ini bisa Anda ubah juga jika mau disamakan dengan body */
   color: #333;
 }
 #hero-services h1 {
@@ -108,7 +83,7 @@ section h2 {
 }
 
 #our-offerings { /* Dari services.html */
-  background-color: #ffffff;
+  background-color: #ffffff; /* Ini juga bisa diubah */
 }
 .card {
   border: none;
@@ -173,7 +148,7 @@ section h2 {
   margin-top: 30px;
 }
 #benefits li {
-  background-color: #ffffff;
+  background-color: #ffffff; /* Latar belakang item manfaat */
   padding: 15px 25px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -225,6 +200,21 @@ footer p {
   margin-bottom: 0.5rem;
 }
 
+/* === Penyesuaian untuk Offcanvas Navbar === */
+.offcanvas {
+  width: 250px; /* Lebar menu offcanvas saat terbuka */
+}
+/* Jika Anda ingin teks di dalam offcanvas menjadi lebih terang */
+.offcanvas-body .nav-link {
+  color: #fff;
+  padding: 10px 0; /* Sesuaikan padding agar tidak terlalu rapat */
+}
+.offcanvas-body .nav-link.active {
+  color: #007bff; /* Warna untuk link aktif di offcanvas */
+}
+/* Anda bisa tambahkan CSS kustom lain untuk offcanvas di sini */
+
+
 /* === Responsive Adjustments === */
 @media (max-width: 768px) {
   nav {
@@ -263,4 +253,4 @@ footer p {
   .card {
     margin-bottom: 20px; /* Spasi antar kartu di layar kecil */
   }
-  }
+}

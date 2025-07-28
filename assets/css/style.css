@@ -1,32 +1,41 @@
-/* 1. Style Hero Section */
-
-<style>
+/* === 1. Style Hero Section === */
 .hero {
-  padding: 100px 15px;
-  background: linear-gradient(90deg, #d4145a, #fbb03b); /* atau background kamu */
+  background-image: linear-gradient(45deg, #be2edd, #74b9ff);
+  background-size: cover;
+  padding: 60px 20px;
   color: white;
   text-align: center;
 }
-.hero .hero-title {
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h2 {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
-.hero .hero-desc {
-  font-size: 1.2rem;
-  max-width: 800px;
-  margin: 0 auto 2rem auto;
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
 }
+
 .hero .cta {
-  background: white;
-  color: #d4145a;
-  padding: 0.8rem 1.5rem;
-  text-decoration: none;
-  border-radius: 8px;
+  background-color: white;
+  color: #d63087;
   font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
 }
+
 .hero .cta:hover {
-  background: #eee;
+  background-color: #fce4ec;
 }
 
   

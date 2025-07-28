@@ -6,12 +6,13 @@
 <body>
 
   <header class="site-header">
-    {% include nav.html %} {# Ini akan memanggil Navbar Offcanvas yang baru #}
+    {% comment %} Ini akan memanggil Navbar Offcanvas yang baru {% endcomment %} {# <--- PERUBAHAN DI SINI #}
+    {% include nav.html %}
   </header>
 
   <main class="page-content" aria-label="Content">
     <div class="wrapper">
-      {{ content }}
+      {{ content }} {# Ini adalah tempat konten spesifik dari setiap halaman (Markdown/HTML) akan disisipkan #}
     </div>
   </main>
 

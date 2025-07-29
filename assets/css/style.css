@@ -218,10 +218,10 @@ header {
 .section {
     padding: 80px 0;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: transparent; /* Ganti ini */
     margin-bottom: 40px;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: none; /* Opsional: hilangkan bayangan biar lebih flat */
 }
 
 .section h2 {

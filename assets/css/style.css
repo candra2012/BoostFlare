@@ -176,20 +176,12 @@ header {
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 100px 20px;
-    min-height: 80vh; /* Ensures sufficient height */
+    padding: 40px 20px; /* ↓ dari 100px jadi 40px */
+    min-height: auto; /* atau bisa dikurangi ke 60vh kalau tetap mau responsif */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* ↓ dari center supaya teks naik */
     align-items: center;
-}
-
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.8em;
-    color: var(--deep-plum);
-    margin-bottom: 20px;
-    line-height: 1.2;
 }
 
 .hero p {

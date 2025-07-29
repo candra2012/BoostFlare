@@ -65,3 +65,25 @@ description: Boost your online presence with our professional digital services â
   <p>Ready to take your business to the next level? Contact us for a free consultation today.</p>
   <a href="https://wa.me/your-number" class="cta-button">Contact via WhatsApp</a>
 </section>
+
+
+
+<!-- Zigzag Animation Script -->
+<script>
+  const sections = document.querySelectorAll('.zigzag-section');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+</script>

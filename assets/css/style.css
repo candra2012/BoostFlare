@@ -414,6 +414,10 @@ footer .social-links a:hover {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* ini buat kasih jarak manis antara gambar & teks */
 }
 
 .zigzag-img {
@@ -421,7 +425,7 @@ footer .social-links a:hover {
   height: auto;
   object-fit: contain;
   border-radius: 10px;
-  margin-bottom: 25px;
+  margin: 0; /* buang margin bawah biar gak menjauh */
 }
 
 .zigzag-text {

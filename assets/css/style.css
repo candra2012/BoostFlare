@@ -341,3 +341,53 @@ footer .social-links a:hover {
         margin-left: 10px;
     }
 }
+
+/* === Hero Slide Section === */
+.hero-slide {
+  width: 100%;
+  text-align: center;
+  color: white;
+  margin-bottom: 60px;
+}
+
+.slide-image {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slide-image img {
+  width: 100%;
+  display: block;
+  animation: slideInLeft 1s ease-out forwards;
+  object-fit: cover;
+}
+
+.slide-text {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.slide-text h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.slide-text p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+/* Animasi Slide */
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}

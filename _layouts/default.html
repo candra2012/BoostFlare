@@ -2,13 +2,80 @@
 <html lang="en">
 <head>
   {% include head.html %}
+  <style>
+    /* Hamburger Button */
+    .hamburger-menu {
+      background: none;
+      border: none;
+      font-size: 1.8em;
+      color: white;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    /* Side Navigation */
+    #mobile-nav {
+      position: fixed;
+      top: 0;
+      left: -250px; /* Hide initially */
+      width: 250px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
+      transition: left 0.3s ease-in-out;
+      padding-top: 80px;
+      z-index: 1000;
+    }
+
+    #mobile-nav.active {
+      left: 0; /* Slide in */
+    }
+
+    #mobile-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #mobile-nav ul li {
+      margin: 20px 0;
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    #mobile-nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+
+    /* Optional: add background animation fix */
+    .animated-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+    }
+  </style>
 </head>
+
 <body>
   <!-- Background animation -->
   <div class="animated-background"></div>
 
   <!-- Navbar -->
   {% include nav.html %}
+
+  <!-- Side Menu -->
+  <nav id="mobile-nav">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
   <!-- Main content -->
   <main class="container">

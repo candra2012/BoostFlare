@@ -31,8 +31,8 @@ body {
     height: 100%;
     z-index: -1; /* Ensure it's behind content */
     background: linear-gradient(135deg, var(--lavender-blush), var(--rose-gold), var(--soft-grey));
-    background-size: 400% 400%; /* Larger gradient for smoother animation */
-    animation: gradientAnimation 15s ease infinite; /* Gradient animation */
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
 }
 
 @keyframes gradientAnimation {
@@ -40,7 +40,7 @@ body {
         background-position: 0% 50%;
     }
     50% {
-    background-position: 100% 50%;
+        background-position: 100% 50%;
     }
     100% {
         background-position: 0% 50%;
@@ -52,7 +52,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    position: relative; /* Important for content z-index above background */
+    position: relative;
     z-index: 1;
 }
 
@@ -67,12 +67,12 @@ header {
 .header-left {
     display: flex;
     align-items: center;
-    gap: 15px; /* Space between hamburger and logo */
+    gap: 15px;
 }
 
 .logo {
     font-family: 'Playfair Display', serif;
-    font-size: 2.2em; /* Slightly smaller for better fit */
+    font-size: 2.2em;
     color: var(--rose-gold);
     text-decoration: none;
     font-weight: 700;
@@ -85,7 +85,7 @@ header {
     font-size: 1.8em;
     color: var(--deep-plum);
     cursor: pointer;
-    display: block; /* Show by default for mobile, adjust with media queries */
+    display: block;
     padding: 5px;
 }
 
@@ -93,18 +93,18 @@ header {
 .mobile-nav {
     position: fixed;
     top: 0;
-    left: -250px; /* Hidden off-screen */
+    left: -250px;
     width: 250px;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white */
+    background-color: rgba(0, 0, 0, 0.8); /* ← updated */
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     transition: left 0.3s ease-in-out;
-    z-index: 100; /* Above everything else */
-    padding-top: 80px; /* Space for fixed header/status bar */
+    z-index: 100;
+    padding-top: 80px;
 }
 
 .mobile-nav.active {
-    left: 0; /* Slide in when active */
+    left: 0;
 }
 
 .mobile-nav ul {
@@ -147,16 +147,16 @@ header {
     padding: 8px 12px;
     border-radius: 20px;
     outline: none;
-    width: 0; /* Hidden by default */
+    width: 0;
     transition: width 0.3s ease-in-out, padding 0.3s ease-in-out;
-    opacity: 0; /* Hidden by default */
+    opacity: 0;
     visibility: hidden;
-    margin-right: -25px; /* Overlap with button initially */
+    margin-right: -25px;
 }
 
 .search-input.active {
-    width: 180px; /* Expand when active */
-    padding: 8px 35px 8px 12px; /* Adjust padding for icon */
+    width: 180px;
+    padding: 8px 35px 8px 12px;
     opacity: 1;
     visibility: visible;
     margin-right: 0;
@@ -176,11 +176,11 @@ header {
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 40px 20px; /* ↓ dari 100px jadi 40px */
-    min-height: auto; /* atau bisa dikurangi ke 60vh kalau tetap mau responsif */
+    padding: 40px 20px;
+    min-height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* ↓ dari center supaya teks naik */
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -204,7 +204,7 @@ header {
 }
 
 .cta-button:hover {
-    background-color: var(--deep-plum); /* Darker hover color */
+    background-color: var(--deep-plum);
     transform: translateY(-3px);
 }
 
@@ -212,7 +212,7 @@ header {
 .section {
     padding: 80px 0;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent for background visibility */
+    background-color: rgba(255, 255, 255, 0.7);
     margin-bottom: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -288,13 +288,12 @@ footer .social-links a:hover {
 
 /* Responsive adjustments */
 @media (min-width: 768px) {
-    /* Hide hamburger menu and show regular nav on larger screens */
     .hamburger-menu {
         display: none;
     }
 
     .mobile-nav {
-        position: static; /* Reset position */
+        position: static;
         width: auto;
         height: auto;
         background: none;
@@ -304,37 +303,32 @@ footer .social-links a:hover {
     }
 
     .mobile-nav ul {
-        display: flex; /* Show as horizontal menu */
+        display: flex;
     }
 
     .mobile-nav ul li {
         border-bottom: none;
-        margin-left: 30px; /* Restore original nav spacing */
+        margin-left: 30px;
     }
 
     .mobile-nav ul li a {
-        padding: 0; /* Remove padding for desktop nav */
+        padding: 0;
     }
 
-    /* Adjust search input for desktop */
     .search-input {
-        width: 180px; /* Always visible on desktop */
+        width: 180px;
         opacity: 1;
         visibility: visible;
         margin-right: 0;
     }
 
-    .search-input.active { /* Remove active state behavior for desktop */
+    .search-input.active {
         width: 180px;
         padding: 8px 12px;
     }
 
     .search-button {
-        position: static; /* Position normally */
-        margin-left: 10px; /* Space from input */
+        position: static;
+        margin-left: 10px;
     }
-  }
-
-body, h1, h2, h3, h4, h5, h6, p, a, span, div, li, strong, em, small {
-  color: #ffffff !important;
 }

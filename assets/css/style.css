@@ -392,12 +392,14 @@ footer .social-links a:hover {
   }
 }
 
-/* === Zigzag Scroll Reveal Style === */
+
+/* === Zigzag Section Styles === */
 .zigzag-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 100px 0;
+  text-align: center;
+  margin: 80px 0;
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -408,77 +410,32 @@ footer .social-links a:hover {
   transform: translateY(0);
 }
 
-.zigzag-img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  border-radius: 10px;
-  margin-bottom: 30px;
-      }
-
-.zigzag-text {
-  text-align: center;
-  max-width: 800px;
-  font-size: 1.1em;
-  color: white;
-  font-weight: 500;
-  line-height: 1.8;
+.zigzag-content {
+  max-width: 1000px;
+  margin: 0 auto;
   padding: 0 20px;
 }
 
-.from-left {
-  transform: translateX(-100px);
-}
-
-.from-right {
-  transform: translateX(100px);
-}
-
-.visible.from-left,
-.visible.from-right {
-  transform: translateX(0);
-}
-
-/* Zigzag Animasi Section */
-.zigzag-section {
-  padding: 60px 20px;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease;
-}
-
-.zigzag-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.zigzag-content {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
 .zigzag-img {
   max-width: 100%;
-  width: 100%;
   height: auto;
   object-fit: contain;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
-.zigzag-section p {
+.zigzag-text {
   font-size: 1.1em;
-  line-height: 1.7em;
+  line-height: 1.8;
   color: white;
+  font-weight: 400;
 }
 
-/* Zigzag masuk kiri */
+/* Alternating animations */
 .zigzag-left {
   transform: translateX(-50px);
 }
 
-/* Zigzag masuk kanan */
 .zigzag-right {
   transform: translateX(50px);
 }

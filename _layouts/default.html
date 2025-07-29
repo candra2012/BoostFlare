@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% include head.html %} </head>
+    {% include head.html %}
+</head>
 <body>
     <div class="animated-background"></div>
 
@@ -11,7 +12,8 @@
                 <button class="hamburger-menu" id="hamburger-menu">
                     <i class="fas fa-bars"></i>
                 </button>
-                <a href="/" class="logo">DigitalPro</a> </div>
+                <a href="/" class="logo">DigitalPro</a>
+            </div>
             <div class="header-right">
                 <div class="search-container">
                     <input type="text" placeholder="Search..." class="search-input" id="search-input">
@@ -30,10 +32,12 @@
         </nav>
 
         <section class="hero" id="home">
-            <h1>Boost Your Online Presence with Professional Digital Services</h1>
+            <h1>{{ page.title | default: site.title }}</h1>
             <p>We offer powerful **TikTok account reporting services**, instant popularity with **Twitter trending topics**, and genuine **YouTube comment engagement**. Get effective **feedback@TikTok** and make your content **FYP TikTok**.</p>
             <a href="#services" class="cta-button">Explore Our Services</a>
         </section>
+
+        {{ content }}
 
         <section class="section" id="services">
             <h2>Our Premium Services</h2>

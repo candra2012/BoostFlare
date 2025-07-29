@@ -408,58 +408,53 @@ footer .social-links a:hover {
   }
 }
 
-/* === Zigzag Section Styles === */
+/* Hindari semua isi section ikut geser */
 .zigzag-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: 80px 0;
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 0.8s ease-out;
+  margin-bottom: 60px;
 }
 
 .zigzag-section.visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
+/* Gambar saja yang animasi slide kiri */
+.animate-slide-left {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+/* Slide dari kiri */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Styling konten zigzag */
 .zigzag-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 15px; /* Jarak manis antara gambar & teks */
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .zigzag-img {
-  max-width: 100%;
+  flex: 1 1 400px;
+  max-width: 500px;
+  width: 100%;
   height: auto;
-  object-fit: contain;
-  border-radius: 10px;
-  margin: 0; /* Hindari jarak berlebihan */
 }
 
-.zigzag-text {
-  font-size: 1.1em;
-  line-height: 1.8;
-  color: white;
-  font-weight: 400;
-}
-
-/* Zigzag animasi kiri dan kanan */
-.zigzag-left {
-  transform: translateX(-50px);
-}
-
-.zigzag-right {
-  transform: translateX(50px);
-}
-
-.zigzag-left.visible,
-.zigzag-right.visible {
-  transform: translateX(0);
+.zigzag-content p {
+  flex: 1 1 500px;
 }

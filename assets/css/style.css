@@ -441,30 +441,36 @@ footer .social-links a:hover {
 
 /* Zigzag Animasi Section */
 .zigzag-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 60px 20px;
+  text-align: center;
   opacity: 0;
-  transform: translateX(50px);
-  transition: all 0.8s ease-out;
-  margin: 80px auto;
-  max-width: 900px;
-  padding: 40px 20px;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
 }
 
 .zigzag-section.visible {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
-/* Gambar tetap ukuran asli */
-.zigzag-section img {
-  display: block;
-  height: auto;
-  width: auto;
+.zigzag-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.zigzag-img {
   max-width: 100%;
+  width: 100%;
+  height: auto;
   object-fit: contain;
-  margin-bottom: 30px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.zigzag-section p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+  color: white;
 }
 
 /* Zigzag masuk kiri */

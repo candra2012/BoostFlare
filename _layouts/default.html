@@ -1,118 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% include head.html %}
+  {% include head.html %}
 </head>
 <body>
-    <div class="animated-background"></div>
+  <!-- Background animation -->
+  <div class="animated-background"></div>
 
-    <div class="container">
-        <header>
-            <div class="header-left">
-                <button class="hamburger-menu" id="hamburger-menu">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <a href="/" class="logo">BoostFlare</a>
-            </div>
-            <div class="header-right">
-                <div class="search-container">
-                    <input type="text" placeholder="Search..." class="search-input" id="search-input">
-                    <button class="search-button" id="search-button"><i class="fas fa-search"></i></button>
-                </div>
-            </div>
-        </header>
+  <!-- Navbar -->
+  {% include nav.html %}
 
-        <nav class="mobile-nav" id="mobile-nav">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+  <!-- Main content -->
+  <main class="container">
+    {{ content }}
+  </main>
 
-        <section class="hero" id="home">
-            <h1>{{ page.title | default: site.title }}</h1>
-            <p>We offer powerful **TikTok account reporting services**, instant popularity with **Twitter trending topics**, and genuine **YouTube comment engagement**. Get effective **feedback@TikTok** and make your content **FYP TikTok**.</p>
-            <a href="#services" class="cta-button">Explore Our Services</a>
-        </section>
+  <!-- Footer -->
+  {% include footer.html %}
 
-        {{ content }}
+  <!-- Script -->
+  <script>
+    const hamburgerBtn = document.getElementById('hamburger-menu');
+    const mobileNav = document.getElementById('mobile-nav');
+    const searchButton = document.getElementById('search-button');
+    const searchInput = document.getElementById('search-input');
 
-        <section class="section" id="services">
-            <h2>Our Premium Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>TikTok Account Reporting</h3>
-                    <p>Need **TikTok account reporting services** or want to **delete TikTok account**? We can help. Our expertise extends to secure **TikTok ban services** and accurate **report TikTok user** processes. We ensure your **TikTok account** needs are handled with care.</p>
-                </div>
-                <div class="service-card">
-                    <h3>YouTube Comment Engagement</h3>
-                    <p>Boost your interaction with our **YouTube comment services**. We provide **real YouTube comments**, ensuring **fast YouTube comments** and **affordable YouTube comments**. Looking to **buy YouTube comments**? We offer the **best YouTube comment service** for your channel growth.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Twitter Trending Topics</h3>
-                    <p>Want a **Twitter trending topic service**? We can help you reach **trending 1 today** or achieve **top trendings** status. Make your brand or message the **trending topic on Twitter** with our strategic services. Get that "**cool, finally made it to trending 6 in Indonesia**" feeling, globally!</p>
-                </div>
-                <div class="service-card">
-                    <h3>TikTok Spam & Account Solutions</h3>
-                    <p>Beyond **delete TikTok account** services, we also provide **TikTok spam services** for specific campaigns. Need to **sell TikTok account** or **buy TikTok account**? Contact us for the best offers. Our solutions cover various **TikTok account** needs.</p>
-                </div>
-            </div>
-        </section>
+    hamburgerBtn?.addEventListener('click', () => {
+      mobileNav.classList.toggle('active');
+    });
 
-        <section class="section" id="about">
-            <h2>Why Choose Us?</h2>
-            <p style="max-width: 800px; margin: 0 auto; font-size: 1.1em; color: var(--deep-plum);">
-                We are a leading provider of **best digital services**, fully committed to client satisfaction. With **24/7 service** and an expert team, we ensure all your digital needs are met effectively and securely. We focus on results, from boosting your **FYP TikTok** visibility to achieving **Twitter trending topics** and providing high-quality **custom YouTube comments**.
-            </p>
-        </section>
+    searchButton?.addEventListener('click', () => {
+      searchInput.classList.toggle('active');
+      if (searchInput.classList.contains('active')) {
+        searchInput.focus();
+      } else {
+        searchInput.value = '';
+      }
+    });
 
-        <section class="section" id="contact">
-            <h2>Contact Us</h2>
-            <p style="font-size: 1.1em; color: var(--deep-plum);">Ready to enhance your online presence? Get in touch today!</p>
-            <p style="font-size: 1.1em; color: var(--deep-plum);">Email: **feedback@tiktok.id** (example - consider a more generic domain for international use)</p>
-            <p style="font-size: 1.1em; color: var(--deep-plum);">Phone: +1-XXX-XXX-XXXX (example - use an international format)</p>
-        </section>
-    </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 BoostFlare. All Rights Reserved.</p>
-            <div class="social-links">
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">Twitter</a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // JavaScript for Hamburger Menu and Search Bar Toggle
-        const hamburgerBtn = document.getElementById('hamburger-menu');
-        const mobileNav = document.getElementById('mobile-nav');
-        const searchButton = document.getElementById('search-button');
-        const searchInput = document.getElementById('search-input');
-
-        hamburgerBtn.addEventListener('click', () => {
-            mobileNav.classList.toggle('active');
-        });
-
-        searchButton.addEventListener('click', () => {
-            searchInput.classList.toggle('active');
-            if (searchInput.classList.contains('active')) {
-                searchInput.focus();
-            } else {
-                searchInput.value = ''; // Clear input when closed
-            }
-        });
-
-        // Close mobile nav when clicking outside or on a link
-        mobileNav.addEventListener('click', (event) => {
-            if (event.target.tagName === 'A' || event.target === mobileNav) {
-                mobileNav.classList.remove('active');
-            }
-        });
-    </script>
+    mobileNav?.addEventListener('click', (event) => {
+      if (event.target.tagName === 'A' || event.target === mobileNav) {
+        mobileNav.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>

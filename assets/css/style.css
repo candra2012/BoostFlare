@@ -391,3 +391,49 @@ footer .social-links a:hover {
     opacity: 1;
   }
 }
+
+/* === Zigzag Scroll Reveal Style === */
+.zigzag-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px 0;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.zigzag-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.zigzag-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.zigzag-text {
+  text-align: center;
+  max-width: 800px;
+  font-size: 1.1em;
+  color: white;
+  font-weight: 500;
+  line-height: 1.8;
+  padding: 0 20px;
+}
+
+.from-left {
+  transform: translateX(-100px);
+}
+
+.from-right {
+  transform: translateX(100px);
+}
+
+.visible.from-left,
+.visible.from-right {
+  transform: translateX(0);
+}

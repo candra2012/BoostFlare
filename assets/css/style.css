@@ -239,10 +239,10 @@ header {
 }
 
 .service-card {
-    background-color: white;
+    background-color: transparent.
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: none.
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

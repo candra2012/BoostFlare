@@ -175,15 +175,13 @@ header {
 
 /* Hero Section */
 .hero-section {
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 60px 20px;
-  color: #fff;
+  text-align: center;
   background: linear-gradient(270deg, #fbc2eb, #a6c1ee);
   background-size: 400% 400%;
-  animation: gradientMove 10s ease infinite;
+  animation: gradientMove 12s ease infinite;
+  color: white;
+  border-radius: 0 0 2rem 2rem;
 }
 
 @keyframes gradientMove {

@@ -218,16 +218,17 @@ header {
 .section {
     padding: 80px 0;
     text-align: center;
-    background-color: transparent; /* Ganti ini */
+    background-color: transparent; /* Bersihkan background */
     margin-bottom: 40px;
     border-radius: 10px;
-    box-shadow: none; /* Opsional: hilangkan bayangan biar lebih flat */
+    box-shadow: none; /* Hilangkan bayangan */
 }
 
 .section h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2.8em;
-    color: var(--deep-plum);
+    color: #000; /* Ubah ke hitam tebal */
+    font-weight: 700;
     margin-bottom: 50px;
 }
 
@@ -239,29 +240,25 @@ header {
 }
 
 .service-card {
-    background-color: transparent;
+    background-color: transparent; /* Bersihkan putihnya */
     padding: 30px;
     border-radius: 8px;
-    box-shadow: none;
+    box-shadow: none; /* Hilangkan efek kotak */
     text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
 .service-card h3 {
     font-family: 'Playfair Display', serif;
-    color: var(--rose-gold);
+    color: #000; /* Hitam tebal */
+    font-weight: 700;
     font-size: 1.8em;
     margin-bottom: 15px;
 }
 
 .service-card p {
-    color: var(--deep-plum);
+    color: #000; /* Hitam tebal */
     font-size: 1em;
+    font-weight: 600;
 }
 
 /* Footer */

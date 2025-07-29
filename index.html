@@ -69,7 +69,6 @@ description: Boost your online presence with our professional digital services â
 
 
 
-<!-- Zigzag Animation Script -->
 <script>
   const sections = document.querySelectorAll('.zigzag-section');
 
@@ -77,7 +76,7 @@ description: Boost your online presence with our professional digital services â
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+        observer.unobserve(entry.target); // agar hanya muncul sekali
       }
     });
   }, {

@@ -174,14 +174,22 @@ header {
 }
 
 /* Hero Section */
-.hero {
-    text-align: center;
-    padding: 40px 20px;
-    min-height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+.hero-section {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: #fff;
+  background: linear-gradient(270deg, #fbc2eb, #a6c1ee);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .hero p {

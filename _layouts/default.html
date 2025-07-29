@@ -1,66 +1,295 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  {% include head.html %}
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-image: linear-gradient(90deg, rgb(151, 26, 210), rgb(57, 199, 205));
-      background-size: cover;
-      background-attachment: fixed;
-      color: white;
-    }
+<html lang="en"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Digital Services: TikTok Reporting, YouTube Engagement & More</title> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Color Palette */
+        :root {
+            --lavender-blush: #FCEEF0;
+            --rose-gold: #B76E79;
+            --soft-grey: #D8D8D8;
+            --deep-plum: #5A3B5B;
+            --hint-of-gold: #DAA520;
+        }
 
-    nav.navbar {
-      width: 100vw;
-      background-color: #000 !important;
-      margin: 0;
-      padding: 0.5rem 1rem;
-    }
+        /* Reset CSS & Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .hero-section {
-      padding: 80px 20px;
-      text-align: center;
-    }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--deep-plum);
+            background-color: var(--lavender-blush); /* Fallback */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
 
-    .btn-light {
-      background-color: transparent;
-      border: 2px solid white;
-      color: white;
-    }
+        /* Animated Gradient Background */
+        .animated-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Ensure it's behind content */
+            background: linear-gradient(135deg, var(--lavender-blush), var(--rose-gold), var(--soft-grey));
+            background-size: 400% 400%; /* Larger gradient for smoother animation */
+            animation: gradientAnimation 15s ease infinite; /* Gradient animation */
+        }
 
-    a, h1, h2, h3, h4, h5, h6, p, span, div {
-      color: white !important;
-    }
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
 
-    footer {
-      background-color: #111;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-    }
-  </style>
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative; /* Important for content z-index above background */
+            z-index: 1;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            color: var(--rose-gold);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--deep-plum);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--rose-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            min-height: 80vh; /* Ensures sufficient height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8em;
+            color: var(--deep-plum);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            color: var(--deep-plum);
+            max-width: 700px;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--rose-gold);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--deep-plum); /* Darker hover color */
+            transform: translateY(-3px);
+        }
+
+        /* General Content Sections */
+        .section {
+            padding: 80px 0;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent for background visibility */
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8em;
+            color: var(--deep-plum);
+            margin-bottom: 50px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--rose-gold);
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--deep-plum);
+            font-size: 1em;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            background-color: var(--deep-plum);
+            color: var(--soft-grey);
+            font-size: 0.9em;
+            margin-top: 50px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer .social-links a {
+            color: var(--soft-grey);
+            margin: 0 10px;
+            font-size: 1.2em;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-links a:hover {
+            color: var(--rose-gold);
+        }
+    </style>
 </head>
-
 <body>
+    <div class="animated-background"></div>
 
-  <!-- HEADER / NAVBAR -->
-  <header>
-    {% include nav.html %}
-  </header>
+    <div class="container">
+        <header>
+            <a href="#" class="logo">DigitalPro</a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
-  <!-- MAIN CONTENT -->
-  <main class="page-content" aria-label="Content">
-    {{ content }}
-  </main>
+        <section class="hero" id="home">
+            <h1>Boost Your Online Presence with Professional Digital Services</h1>
+            <p>We offer powerful **TikTok account reporting services**, instant popularity with **Twitter trending topics**, and genuine **YouTube comment engagement**. Get effective **feedback@TikTok** and make your content **FYP TikTok**.</p>
+            <a href="#services" class="cta-button">Explore Our Services</a>
+        </section>
 
-  <!-- FOOTER -->
-  <footer>
-    {% include footer.html %}
-  </footer>
+        <section class="section" id="services">
+            <h2>Our Premium Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>TikTok Account Reporting</h3>
+                    <p>Need **TikTok account reporting services** or want to **delete TikTok account**? We can help. Our expertise extends to secure **TikTok ban services** and accurate **report TikTok user** processes. We ensure your **TikTok account** needs are handled with care.</p>
+                </div>
+                <div class="service-card">
+                    <h3>YouTube Comment Engagement</h3>
+                    <p>Boost your interaction with our **YouTube comment services**. We provide **real YouTube comments**, ensuring **fast YouTube comments** and **affordable YouTube comments**. Looking to **buy YouTube comments**? We offer the **best YouTube comment service** for your channel growth.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Twitter Trending Topics</h3>
+                    <p>Want a **Twitter trending topic service**? We can help you reach **trending 1 today** or achieve **top trendings** status. Make your brand or message the **trending topic on Twitter** with our strategic services. Get that "**cool, finally made it to trending 6 in Indonesia**" feeling, globally!</p>
+                </div>
+                <div class="service-card">
+                    <h3>TikTok Spam & Account Solutions</h3>
+                    <p>Beyond **delete TikTok account** services, we also provide **TikTok spam services** for specific campaigns. Need to **sell TikTok account** or **buy TikTok account**? Contact us for the best offers. Our solutions cover various **TikTok account** needs.</p>
+                </div>
+            </div>
+        </section>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <section class="section" id="about">
+            <h2>Why Choose Us?</h2>
+            <p style="max-width: 800px; margin: 0 auto; font-size: 1.1em; color: var(--deep-plum);">
+                We are a leading provider of **best digital services**, fully committed to client satisfaction. With **24/7 service** and an expert team, we ensure all your digital needs are met effectively and securely. We focus on results, from boosting your **FYP TikTok** visibility to achieving **Twitter trending topics** and providing high-quality **custom YouTube comments**.
+            </p>
+        </section>
+
+        <section class="section" id="contact">
+            <h2>Contact Us</h2>
+            <p style="font-size: 1.1em; color: var(--deep-plum);">Ready to enhance your online presence? Get in touch today!</p>
+            <p style="font-size: 1.1em; color: var(--deep-plum);">Email: **feedback@tiktok.id** (example - consider a more generic domain for international use)</p>
+            <p style="font-size: 1.1em; color: var(--deep-plum);">Phone: +1-XXX-XXX-XXXX (example - use an international format)</p>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 DigitalPro. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

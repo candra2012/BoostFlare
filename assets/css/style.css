@@ -342,6 +342,7 @@ footer .social-links a:hover {
     }
 }
 
+
 /* === Hero Slide Section === */
 .hero-slide {
   width: 100%;
@@ -392,7 +393,6 @@ footer .social-links a:hover {
   }
 }
 
-
 /* === Zigzag Section Styles === */
 .zigzag-section {
   display: flex;
@@ -417,7 +417,7 @@ footer .social-links a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px; /* ini buat kasih jarak manis antara gambar & teks */
+  gap: 15px; /* Jarak manis antara gambar & teks */
 }
 
 .zigzag-img {
@@ -425,7 +425,7 @@ footer .social-links a:hover {
   height: auto;
   object-fit: contain;
   border-radius: 10px;
-  margin: 0; /* buang margin bawah biar gak menjauh */
+  margin: 0; /* Hindari jarak berlebihan */
 }
 
 .zigzag-text {
@@ -435,7 +435,7 @@ footer .social-links a:hover {
   font-weight: 400;
 }
 
-/* Alternating animations */
+/* Zigzag animasi kiri dan kanan */
 .zigzag-left {
   transform: translateX(-50px);
 }

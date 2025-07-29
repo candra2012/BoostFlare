@@ -292,11 +292,10 @@ footer .social-links a:hover {
         display: none;
     }
 
-    /* Offcanvas Transparan + Blur Elegan */
-.offcanvas {
-  background-color: rgba(20, 20, 20, 0.6) !important; /* Lebih gelap */
-  backdrop-filter: blur(15px);
-  color: white; /* Agar teks tetap terbaca */
+    /* Ubah offcanvas dengan text-bg-dark agar transparan */
+.offcanvas.text-bg-dark {
+  background-color: rgba(33, 37, 41, 0.7) !important; /* Bootstrap dark + transparan */
+  backdrop-filter: blur(10px); /* Efek blur biar keren */
 }
 
     .mobile-nav {

@@ -35,7 +35,8 @@ h1, h2, h3, h4, h5, h6, p, span, li, a {
     font-weight: 700;
 }
 .service-card h3 {
-    color: var(--rose-gold);
+    color: #ffffff;       
+    font-weight: bold;    
 }
 /* Warna teks untuk navigasi Bootstrap jika diperlukan override */
 .navbar-dark .navbar-nav .nav-link { /* Untuk link nav Bootstrap */

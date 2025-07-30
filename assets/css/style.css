@@ -27,7 +27,7 @@ body {
 h1, h2, h3, h4, h5, h6, p, span, li, a {
     color: var(--white-text); /* Semua teks utama menjadi putih */
 }
-/* Kecuali untuk elemen spesifik yang memang harus beda warna, contohnya logo */
+/* Kecuali untuk elemen spesifik yang memang harus beda warna, contohnya logo Bootstrap */
 .navbar-brand { /* Ini adalah logo Bootstrap */
     color: var(--rose-gold) !important; /* Gunakan !important untuk menimpa Bootstrap */
     font-family: 'Playfair Display', serif; /* Pertahankan font */
@@ -148,19 +148,21 @@ h1, h2, h3, h4, h5, h6, p, span, li, a {
     font-weight: 700;
     font-size: 1.1em;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: auto; /* Memusatkan CTA Button */
+    margin-right: auto;
 }
-
 .cta-button:hover {
     background-color: var(--deep-plum);
     transform: translateY(-3px);
 }
+
 
 /* General Content Sections (untuk #about, #services, #contact) */
 .section {
     padding: 80px 0;
     text-align: center;
     background-color: transparent; /* Agar background utama terlihat */
-    margin-bottom: 10px;
+    margin-bottom: 40px; /* Diubah dari 10px ke 40px untuk jarak antar section */
     border-radius: 10px;
     box-shadow: none;
 }
@@ -170,7 +172,7 @@ h1, h2, h3, h4, h5, h6, p, span, li, a {
     font-size: 2.8em;
     color: var(--white-text);
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 50px; /* Diubah dari 10px ke 50px untuk jarak dengan konten di bawahnya */
 }
 
 .services-grid {
@@ -181,10 +183,10 @@ h1, h2, h3, h4, h5, h6, p, span, li, a {
 }
 
 .service-card {
-    background-color: rgba(255, 255, 255, 0.1); /* Background card lebih transparan */
+    background-color: rgba(255, 255, 255, 0.1);
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Shadow lebih gelap */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -196,14 +198,14 @@ h1, h2, h3, h4, h5, h6, p, span, li, a {
 
 .service-card h3 {
     font-family: 'Playfair Display', serif;
-    color: var(--rose-gold); /* H3 di service card tetap rose-gold */
+    color: var(--rose-gold);
     font-weight: 700;
     font-size: 1.8em;
     margin-bottom: 15px;
 }
 
 .service-card p {
-    color: var(--white-text); /* P di service card menjadi putih */
+    color: var(--white-text);
     font-size: 1em;
     font-weight: 400;
 }
@@ -213,7 +215,7 @@ footer {
     text-align: center;
     padding: 40px 0;
     background-color: var(--deep-plum);
-    color: var(--soft-grey); /* Teks footer tetap soft-grey, atau bisa diubah ke white-text */
+    color: var(--soft-grey);
     font-size: 0.9em;
     margin-top: 50px;
     border-top-left-radius: 10px;
@@ -241,23 +243,23 @@ footer .social-links a:hover {
 
 .zig-zag-container {
     padding: 60px 0;
-    max-width: 1100px; /* <--- PERUBAHAN UTAMA: Kontainer utama lebih lebar */
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 .zig-zag-item {
     display: flex;
-    flex-direction: column; /* Gambar di atas, teks di bawah */
-    align-items: center; /* Pusatkan item secara horizontal */
+    flex-direction: column; /* Gambar di atas, teks di bawah (karena di HTML gambar duluan) */
+    align-items: center;
     margin-bottom: 80px;
-    gap: 5px; /* Kurangi jarak antara gambar dan teks */
+    gap: 10px; /* Jarak antara gambar dan teks */
     padding: 0;
 
     background-color: transparent;
     border-radius: 0;
     box-shadow: none;
 
-    opacity: 0;
+    opacity: 0; /* Seluruh item dimulai transparan (untuk fade-in) */
     transition: opacity 0.8s ease-out;
 
     transform: none;
@@ -284,13 +286,15 @@ footer .social-links a:hover {
 .zig-zag-content p,
 .zig-zag-content h2 {
     color: var(--white-text) !important;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 
 /* Kontainer Gambar: Ini yang Akan Slide */
 .zig-zag-image {
-    width: 90%; /* <--- PERUBAHAN UTAMA: Ditingkatkan dari 80% menjadi 90% */
-    max-width: 900px; /* <--- PERUBAHAN UTAMA: Ditingkatkan dari 750px menjadi 850px */
+    width: 90%; /* Lebar gambar */
+    max-width: 900px; /* Batas maksimum lebar */
     text-align: center;
     overflow: hidden;
     border-radius: 8px;
@@ -302,9 +306,8 @@ footer .social-links a:hover {
 
     /* === RASIO ASPEK 16:9 === */
     position: relative;
-    padding-bottom: 100%;
-    height: auto;
-    /* =========================================== */
+    padding-bottom: 56.25%; /* Ini 16:9 (9/16) */
+    height: 0; /* Penting agar padding-bottom yang menentukan tinggi */
 }
 
 /* Elemen Gambar: Ini yang Mengalami Animasi Slide */
@@ -334,18 +337,21 @@ footer .social-links a:hover {
     transform: translateX(0); /* Final state: kembali ke posisi normal */
 }
 
-/* Posisi Zig-zag untuk SELURUH ITEM (.zig-zag-item), bukan hanya gambar */
-.zig-zag-item[data-animation-direction="left"] {
-    align-self: flex-start;
-    margin-right: auto;
-    margin-left: 0;
+/* Posisi Zig-zag untuk SELURUH ITEM (.zig-zag-item) di desktop */
+@media (min-width: 769px) { /* Untuk desktop, agar tidak konflik dengan mobile */
+    .zig-zag-item[data-animation-direction="left"] {
+        align-self: flex-start;
+        margin-right: auto;
+        margin-left: 0;
+    }
+
+    .zig-zag-item[data-animation-direction="right"] {
+        align-self: flex-end;
+        margin-left: auto;
+        margin-right: 0;
+    }
 }
 
-.zig-zag-item[data-animation-direction="right"] {
-    align-self: flex-end;
-    margin-left: auto;
-    margin-right: 0;
-}
 
 /* Mengatur posisi awal gambar untuk SLIDE DARI KIRI */
 .zig-zag-item[data-animation-direction="left"] .zig-zag-image img {
@@ -362,24 +368,22 @@ footer .social-links a:hover {
 @media (max-width: 768px) {
     .zig-zag-item,
     .zig-zag-item.reverse {
-        flex-direction: column;
+        flex-direction: column; /* Gambar di atas, teks di bawah di mobile */
         align-items: center;
         margin-bottom: 50px;
-        gap: 5px; /* Kurangi jarak juga di mobile */
+        gap: 10px;
         margin-left: auto; /* Pusatkan di mobile */
         margin-right: auto; /* Pusatkan di mobile */
     }
 
     .zig-zag-image {
-        width: 90%; /* Gambar lebih lebar di mobile, dari 80% ke 90% */
+        width: 90%;
         max-width: 100%;
         box-shadow: none;
 
-        /* === RASIO ASPEK 16:9 UNTUK MOBILE === */
         position: relative;
         padding-bottom: 56.25%;
         height: 0;
-        /* =========================================== */
     }
 
     .zig-zag-content {
@@ -393,14 +397,15 @@ footer .social-links a:hover {
     .zig-zag-content p,
     .zig-zag-content h2 {
         color: var(--white-text) !important;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
-    /* === PERUBAHAN UTAMA UNTUK ANIMASI MOBILE: KEMBALI KE SLIDE HORIZONTAL === */
+    /* Animasi gambar untuk mobile: tetap slide horizontal */
     .zig-zag-image img {
-        /* Default mobile: slide dari kanan */
         opacity: 0;
         transform: translateX(100%);
-        transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* Durasi sama dengan desktop */
+        transition: opacity 1.2s ease-out, transform 1.2s ease-out;
     }
 
     .zig-zag-item.is-visible .zig-zag-image img {
@@ -408,15 +413,8 @@ footer .social-links a:hover {
         transform: translateX(0);
     }
 
-    /* Aturan ini menimpa aturan slideX default untuk mobile agar bisa slide dari kiri/kanan */
+    /* Aturan untuk slide dari kiri di mobile */
     .zig-zag-item[data-animation-direction="left"] .zig-zag-image img {
         transform: translateX(-100%);
     }
-
-    .zig-zag-item.is-visible[data-animation-direction="left"] .zig-zag-image img {
-        transform: translateX(0);
-    }
-
-    /* Hapus aturan transform: translateY yang ada di sini sebelumnya */
-    /* Ini untuk memastikan tidak ada konflik */
     }

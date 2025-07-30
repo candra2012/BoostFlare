@@ -125,7 +125,7 @@ header {
     display: block;
     padding: 15px 20px;
     text-decoration: none;
-    color: var(--deep-plum); /* <-- Periksa warna teks untuk kontras dengan background gelap mobile nav */
+    color: white; /* Diubah agar kontras dengan background mobile nav yang gelap */
     font-weight: 500;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -175,37 +175,34 @@ header {
 
 /* Hero Section */
 .hero-section {
-  padding: 60px 20px;
+  padding: 100px 20px;
   text-align: center;
-  background: linear-gradient(270deg, #fbc2eb, #a6c1ee); /* Ini background gradien baru */
+  background: linear-gradient(270deg, var(--lavender-blush), var(--rose-gold));
   background-size: 400% 400%;
   animation: gradientMove 12s ease infinite;
-  color: white; /* Pastikan teks di hero section ini kontras */
+  color: var(--deep-plum);
   border-radius: 0 0 2rem 2rem;
+}
+
+.hero-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.8em;
+    color: var(--deep-plum);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-section p {
+    font-size: 1.3em;
+    color: var(--deep-plum);
+    max-width: 700px;
+    margin-bottom: 40px;
 }
 
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-}
-
-/* Perhatikan: class .hero ada di HTML sebelumnya, bukan .hero-section.
-   Sesuaikan di HTML atau ubah nama class CSS ini.
-   Jika .hero-section adalah pengganti .hero, maka: */
-.hero-section h1 { /* Tambahkan ini jika hero-section punya H1 */
-    font-family: 'Playfair Display', serif;
-    font-size: 3.8em;
-    color: white; /* Sesuaikan warna agar kontras dengan gradien hero */
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.hero-section p { /* Ganti .hero p jadi .hero-section p */
-    font-size: 1.3em;
-    color: white; /* Sesuaikan warna agar kontras dengan gradien hero */
-    max-width: 700px;
-    margin-bottom: 40px;
 }
 
 .cta-button {
@@ -229,25 +226,20 @@ header {
 .section {
     padding: 80px 0;
     text-align: center;
-    background-color: transparent; /* Bersihkan background agar background animasimu terlihat */
+    background-color: transparent;
     margin-bottom: 40px;
     border-radius: 10px;
-    box-shadow: none; /* Hilangkan bayangan kotak */
+    box-shadow: none;
 }
 
 .section h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2.8em;
-    color: var(--deep-plum); /* Kembali ke deep-plum, lebih elegan dari black */
+    color: var(--deep-plum);
     font-weight: 700;
     margin-bottom: 50px;
 }
 
-/*
-Saya akan mengabaikan .services-grid, .service-card, h3, p di bawah ini
-karena kita sudah beralih ke struktur zig-zag yang lebih spesifik.
-Jika kamu masih menggunakan .services-grid di bagian lain, pertahankan saja.
-*/
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -256,25 +248,31 @@ Jika kamu masih menggunakan .services-grid di bagian lain, pertahankan saja.
 }
 
 .service-card {
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 30px;
     border-radius: 8px;
-    box-shadow: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
 .service-card h3 {
     font-family: 'Playfair Display', serif;
-    color: var(--deep-plum); /* Kembali ke deep-plum */
+    color: var(--rose-gold);
     font-weight: 700;
     font-size: 1.8em;
     margin-bottom: 15px;
 }
 
 .service-card p {
-    color: var(--deep-plum); /* Kembali ke deep-plum */
+    color: var(--deep-plum);
     font-size: 1em;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 /* Footer */
@@ -311,13 +309,9 @@ footer .social-links a:hover {
         display: none;
     }
 
-    /* Ubah offcanvas dengan text-bg-dark agar transparan */
-    /* Ini adalah kelas Bootstrap, bukan dari kode kamu yang saya tahu.
-       Jika kamu menggunakan Bootstrap, pastikan CSS ini override defaultnya.
-       Untuk mobile-nav kamu, ini yang relevan: */
     .mobile-nav {
-      background-color: rgba(0, 0, 0, 0.7) !important; /* Contoh, agar lebih transparan */
-      backdrop-filter: blur(10px); /* Efek blur biar keren */
+      background-color: rgba(0, 0, 0, 0.7) !important;
+      backdrop-filter: blur(10px);
     }
 
     .mobile-nav {
@@ -362,28 +356,28 @@ footer .social-links a:hover {
 }
 
 
-/* --- START REVISED ZIG-ZAG ANIMATION CSS --- */
+/* --- REVISED ZIG-ZAG ANIMATION CSS (untuk gambar di atas teks & tanpa box putih) --- */
 
 .zig-zag-container {
     padding: 60px 0;
-    max-width: 1200px;
+    max-width: 1000px; /* Lebar container diperkecil sedikit */
     margin: 0 auto;
 }
 
 .zig-zag-item {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column; /* Gambar di atas, teks di bawah */
+    align-items: center; /* Pusatkan item secara horizontal */
     margin-bottom: 80px;
-    gap: 40px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    gap: 30px; /* Jarak antara gambar dan teks */
+    padding: 0; /* Hapus padding agar tidak ada box */
+    background-color: transparent; /* Hapus background putih box */
+    border-radius: 0; /* Hapus border radius */
+    box-shadow: none; /* Hapus box shadow */
 
-    /* Initial state for the entire item (fade-in) */
+    /* Animasi fade-in untuk seluruh item saat terlihat */
     opacity: 0;
-    transition: opacity 0.8s ease-out; /* Smooth fade-in for the whole block */
+    transition: opacity 0.8s ease-out;
 }
 
 /* Class added by JavaScript when item is visible */
@@ -391,17 +385,15 @@ footer .social-links a:hover {
     opacity: 1;
 }
 
-/* Reverse order for zig-zag effect */
-.zig-zag-item.reverse {
-    flex-direction: row-reverse;
-}
+/* Tidak ada .reverse untuk flex-direction karena selalu column.
+   Efek zig-zag akan dibuat dengan margin atau transform horizontal pada item itu sendiri. */
 
 .zig-zag-content {
-    flex: 1; /* Teks mengambil ruangnya */
-    padding: 20px; /* Padding internal untuk teks */
-    /* Hapus atau pastikan TIDAK ADA properti transform atau animation di sini
-       yang menyebabkan teks ikut bergeser secara lateral. */
-    /* Jika kamu ingin teks juga fade-in, bisa tambahkan: */
+    width: 100%; /* Konten teks mengambil lebar penuh item */
+    padding: 0 20px; /* Padding horizontal agar teks tidak terlalu menempel */
+    text-align: center; /* Pusatkan teks */
+
+    /* Animasi fade-in untuk teks */
     opacity: 0;
     transition: opacity 0.8s ease-out 0.4s; /* Fade-in setelah gambar sedikit masuk */
 }
@@ -409,22 +401,24 @@ footer .social-links a:hover {
 /* Pastikan teks terlihat setelah parent .zig-zag-item visible */
 .zig-zag-item.is-visible .zig-zag-content {
     opacity: 1;
-    /* Pastikan tidak ada transform yang membuat teks bergeser */
     transform: none;
 }
 
 
 .zig-zag-image {
-    flex: 1; /* Gambar mengambil ruangnya */
-    text-align: center; /* Pusat gambar di dalam div-nya */
-    overflow: hidden; /* **Sangat Penting:** Menyembunyikan bagian gambar yang meluncur dari luar */
+    width: 60%; /* Lebar gambar (bisa disesuaikan, tidak full) */
+    max-width: 500px; /* Batasi ukuran maksimum gambar */
+    height: auto; /* Jaga rasio aspek */
+    text-align: center; /* Pusatkan gambar di dalam div-nya */
+    overflow: hidden; /* Penting: Menyembunyikan bagian gambar yang meluncur dari luar */
+    border-radius: 8px; /* Tetap berikan border-radius pada gambar */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Berikan shadow pada gambar itu sendiri */
 }
 
 .zig-zag-image img {
-    max-width: 100%;
+    width: 100%; /* Gambar mengisi penuh kontainer .zig-zag-image */
+    display: block; /* Hilangkan spasi bawah default img */
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 
     /* Initial state for IMAGE animation only */
     opacity: 0;
@@ -441,10 +435,26 @@ footer .social-links a:hover {
     transform: translateX(0); /* Final state: kembali ke posisi normal */
 }
 
+
+/* Zig-zag positioning for the entire item */
+/* Menggeser seluruh blok .zig-zag-item untuk menciptakan efek zig-zag */
+.zig-zag-item[data-animation-direction="left"] {
+    align-self: flex-start; /* Geser ke kiri dalam container parent */
+    margin-right: auto; /* Untuk memastikan tetap di kiri */
+    margin-left: 0;
+}
+
+.zig-zag-item[data-animation-direction="right"] {
+    align-self: flex-end; /* Geser ke kanan dalam container parent */
+    margin-left: auto; /* Untuk memastikan tetap di kanan */
+    margin-right: 0;
+}
+
+
 /* Specific slide directions based on data-animation-direction attribute */
-/* Untuk gambar yang harus slide dari kiri */
+/* Untuk gambar yang harus slide dari kiri (jika item itu sendiri di kiri) */
 .zig-zag-item[data-animation-direction="left"] .zig-zag-image img {
-    transform: translateX(-100%); /* Gambar dimulai 100% di luar batas kirinya */
+    transform: translateX(-100%); /* Gambar mulai 100% di luar batas kirinya */
 }
 
 /* Untuk gambar yang slide dari kiri, saat terlihat */
@@ -456,19 +466,24 @@ footer .social-links a:hover {
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     .zig-zag-item,
-    .zig-zag-item.reverse {
-        flex-direction: column; /* Stack vertically */
-        text-align: center;
+    .zig-zag-item.reverse { /* Both directions stack vertically */
+        flex-direction: column;
+        align-items: center; /* Pusatkan lagi */
         margin-bottom: 50px;
         gap: 20px;
+        /* Reset margin untuk mobile agar terpusat */
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .zig-zag-content,
     .zig-zag-image {
-        padding: 0;
-        width: 100%;
-        /* Reset any flex basis that might constrain width on mobile */
-        flex: none;
+        width: 80%; /* Gambar bisa lebih lebar di mobile */
+        max-width: 100%; /* Batasi agar tidak terlalu besar */
+    }
+
+    .zig-zag-content {
+        padding: 0 15px; /* Sesuaikan padding teks untuk mobile */
+        text-align: center;
     }
 
     /* Untuk mobile, animasi gambar bisa diubah jadi fade-up sederhana agar lebih halus */
@@ -481,5 +496,15 @@ footer .social-links a:hover {
         transform: translateY(0);
         opacity: 1;
     }
+
+    /* Reset slide direction for mobile */
+    .zig-zag-item[data-animation-direction="left"] .zig-zag-image img,
+    .zig-zag-item[data-animation-direction="right"] .zig-zag-image img {
+        transform: translateY(20px); /* Semua slide up */
+    }
+
+    .zig-zag-item.is-visible[data-animation-direction="left"] .zig-zag-image img,
+    .zig-zag-item.is-visible[data-animation-direction="right"] .zig-zag-image img {
+        transform: translateY(0);
+    }
 }
-/* --- END REVISED ZIG-ZAG ANIMATION CSS --- */

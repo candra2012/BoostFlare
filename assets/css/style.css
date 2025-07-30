@@ -374,14 +374,35 @@ footer .social-links a:hover {
   opacity: 1;
 }
 
-/* Gambar saja yang animasi slide dari kiri */
+/* Hanya gambar yang animasi */
 .zigzag-img {
   animation: slideInLeft 1s ease-out forwards;
 }
 
-/* Pastikan text tidak ikut animasi, jadi kita tidak beri class atau style animasi pada <p> */
+/* Pastikan text tidak ikut animasi */
+.zigzag-content p {
+  flex: 1 1 500px;
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
 
-/* Keyframe animasi slide kiri */
+/* Tambahan: pastikan parent text juga tidak punya efek animasi */
+.zigzag-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+/* Keyframe animasi slide kiri untuk gambar saja */
 @keyframes slideInLeft {
   from {
     transform: translateX(-100%);
@@ -393,25 +414,9 @@ footer .social-links a:hover {
   }
 }
 
-/* Styling konten zigzag */
-.zigzag-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
 .zigzag-img {
   flex: 1 1 400px;
   max-width: 500px;
   width: 100%;
   height: auto;
-}
-
-.zigzag-content p {
-  flex: 1 1 500px;
 }

@@ -246,7 +246,7 @@ footer .social-links a:hover {
     flex-direction: column; /* Gambar di atas, teks di bawah */
     align-items: center; /* Pusatkan item secara horizontal */
     margin-bottom: 80px;
-    gap: 15px; /* Kurangi jarak antara gambar dan teks */
+    gap: 10px; /* Kurangi jarak antara gambar dan teks */
     padding: 0;
 
     background-color: transparent;
@@ -286,7 +286,7 @@ footer .social-links a:hover {
 /* Kontainer Gambar: Ini yang Akan Slide */
 .zig-zag-image {
     width: 90%; /* <--- PERUBAHAN UTAMA: Ditingkatkan dari 80% menjadi 90% */
-    max-width: 850px; /* <--- PERUBAHAN UTAMA: Ditingkatkan dari 750px menjadi 850px */
+    max-width: 900px; /* <--- PERUBAHAN UTAMA: Ditingkatkan dari 750px menjadi 850px */
     text-align: center;
     overflow: hidden;
     border-radius: 8px;

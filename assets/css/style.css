@@ -96,7 +96,7 @@ header {
     left: -250px;
     width: 250px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* ← updated */
+    background-color: rgba(0, 0, 0, 0.8);
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     transition: left 0.3s ease-in-out;
     z-index: 100;
@@ -125,7 +125,7 @@ header {
     display: block;
     padding: 15px 20px;
     text-decoration: none;
-    color: var(--deep-plum);
+    color: var(--deep-plum); /* <-- Periksa warna teks untuk kontras dengan background gelap mobile nav */
     font-weight: 500;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -177,10 +177,10 @@ header {
 .hero-section {
   padding: 60px 20px;
   text-align: center;
-  background: linear-gradient(270deg, #fbc2eb, #a6c1ee);
+  background: linear-gradient(270deg, #fbc2eb, #a6c1ee); /* Ini background gradien baru */
   background-size: 400% 400%;
   animation: gradientMove 12s ease infinite;
-  color: white;
+  color: white; /* Pastikan teks di hero section ini kontras */
   border-radius: 0 0 2rem 2rem;
 }
 
@@ -190,9 +190,20 @@ header {
   100% { background-position: 0% 50%; }
 }
 
-.hero p {
+/* Perhatikan: class .hero ada di HTML sebelumnya, bukan .hero-section.
+   Sesuaikan di HTML atau ubah nama class CSS ini.
+   Jika .hero-section adalah pengganti .hero, maka: */
+.hero-section h1 { /* Tambahkan ini jika hero-section punya H1 */
+    font-family: 'Playfair Display', serif;
+    font-size: 3.8em;
+    color: white; /* Sesuaikan warna agar kontras dengan gradien hero */
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-section p { /* Ganti .hero p jadi .hero-section p */
     font-size: 1.3em;
-    color: var(--deep-plum);
+    color: white; /* Sesuaikan warna agar kontras dengan gradien hero */
     max-width: 700px;
     margin-bottom: 40px;
 }
@@ -218,20 +229,25 @@ header {
 .section {
     padding: 80px 0;
     text-align: center;
-    background-color: transparent; /* Bersihkan background */
+    background-color: transparent; /* Bersihkan background agar background animasimu terlihat */
     margin-bottom: 40px;
     border-radius: 10px;
-    box-shadow: none; /* Hilangkan bayangan */
+    box-shadow: none; /* Hilangkan bayangan kotak */
 }
 
 .section h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2.8em;
-    color: #000; /* Ubah ke hitam tebal */
+    color: var(--deep-plum); /* Kembali ke deep-plum, lebih elegan dari black */
     font-weight: 700;
     margin-bottom: 50px;
 }
 
+/*
+Saya akan mengabaikan .services-grid, .service-card, h3, p di bawah ini
+karena kita sudah beralih ke struktur zig-zag yang lebih spesifik.
+Jika kamu masih menggunakan .services-grid di bagian lain, pertahankan saja.
+*/
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -240,23 +256,23 @@ header {
 }
 
 .service-card {
-    background-color: transparent; /* Bersihkan putihnya */
+    background-color: transparent;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: none; /* Hilangkan efek kotak */
+    box-shadow: none;
     text-align: left;
 }
 
 .service-card h3 {
     font-family: 'Playfair Display', serif;
-    color: #000; /* Hitam tebal */
+    color: var(--deep-plum); /* Kembali ke deep-plum */
     font-weight: 700;
     font-size: 1.8em;
     margin-bottom: 15px;
 }
 
 .service-card p {
-    color: #000; /* Hitam tebal */
+    color: var(--deep-plum); /* Kembali ke deep-plum */
     font-size: 1em;
     font-weight: 600;
 }
@@ -296,10 +312,13 @@ footer .social-links a:hover {
     }
 
     /* Ubah offcanvas dengan text-bg-dark agar transparan */
-.offcanvas.text-bg-dark {
-  background-color: rgba(33, 37, 41, 0.7) !important; /* Bootstrap dark + transparan */
-  backdrop-filter: blur(10px); /* Efek blur biar keren */
-}
+    /* Ini adalah kelas Bootstrap, bukan dari kode kamu yang saya tahu.
+       Jika kamu menggunakan Bootstrap, pastikan CSS ini override defaultnya.
+       Untuk mobile-nav kamu, ini yang relevan: */
+    .mobile-nav {
+      background-color: rgba(0, 0, 0, 0.7) !important; /* Contoh, agar lebih transparan */
+      backdrop-filter: blur(10px); /* Efek blur biar keren */
+    }
 
     .mobile-nav {
         position: static;
@@ -343,80 +362,124 @@ footer .social-links a:hover {
 }
 
 
-/* === Hero Slide Section === */
-.hero-slide {
-  width: 100%;
-  text-align: center;
-  color: white;
-  margin-bottom: 60px;
+/* --- START REVISED ZIG-ZAG ANIMATION CSS --- */
+
+.zig-zag-container {
+    padding: 60px 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.slide-image {
-  width: 100%;
-  overflow: hidden;
-}
+.zig-zag-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 80px;
+    gap: 40px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 
-.slide-image img {
-  width: 100%;
-  display: block;
-  animation: slideInLeft 1s ease-out forwards;
-  object-fit: cover;
-}
-
-/* Hindari semua isi section ikut geser */
-.zigzag-section {
-  opacity: 0;
-  transition: opacity 0.8s ease-out;
-  margin-bottom: 60px;
-}
-
-.zigzag-section.visible {
-  opacity: 1;
-}
-
-/* Hanya gambar yang animasi */
-.zigzag-img {
-  animation: slideInLeft 1s ease-out forwards;
-}
-
-/* Pastikan text tidak ikut animasi */
-.zigzag-content p {
-  flex: 1 1 500px;
-  opacity: 1 !important;
-  transform: none !important;
-  animation: none !important;
-}
-
-/* Tambahan: pastikan parent text juga tidak punya efek animasi */
-.zigzag-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  opacity: 1 !important;
-  transform: none !important;
-  animation: none !important;
-}
-
-/* Keyframe animasi slide kiri untuk gambar saja */
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-100%);
+    /* Initial state for the entire item (fade-in) */
     opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+    transition: opacity 0.8s ease-out; /* Smooth fade-in for the whole block */
 }
 
-.zigzag-img {
-  flex: 1 1 400px;
-  max-width: 500px;
-  width: 100%;
-  height: auto;
+/* Class added by JavaScript when item is visible */
+.zig-zag-item.is-visible {
+    opacity: 1;
 }
+
+/* Reverse order for zig-zag effect */
+.zig-zag-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.zig-zag-content {
+    flex: 1; /* Teks mengambil ruangnya */
+    padding: 20px; /* Padding internal untuk teks */
+    /* Hapus atau pastikan TIDAK ADA properti transform atau animation di sini
+       yang menyebabkan teks ikut bergeser secara lateral. */
+    /* Jika kamu ingin teks juga fade-in, bisa tambahkan: */
+    opacity: 0;
+    transition: opacity 0.8s ease-out 0.4s; /* Fade-in setelah gambar sedikit masuk */
+}
+
+/* Pastikan teks terlihat setelah parent .zig-zag-item visible */
+.zig-zag-item.is-visible .zig-zag-content {
+    opacity: 1;
+    /* Pastikan tidak ada transform yang membuat teks bergeser */
+    transform: none;
+}
+
+
+.zig-zag-image {
+    flex: 1; /* Gambar mengambil ruangnya */
+    text-align: center; /* Pusat gambar di dalam div-nya */
+    overflow: hidden; /* **Sangat Penting:** Menyembunyikan bagian gambar yang meluncur dari luar */
+}
+
+.zig-zag-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+
+    /* Initial state for IMAGE animation only */
+    opacity: 0;
+    /* Default: slide dari kanan. Gambar dimulai 100% di luar batas kanannya. */
+    transform: translateX(100%);
+
+    /* Transisi hanya pada gambar: opacity dan transform */
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+/* Animation trigger for images when .zig-zag-item is visible */
+.zig-zag-item.is-visible .zig-zag-image img {
+    opacity: 1;
+    transform: translateX(0); /* Final state: kembali ke posisi normal */
+}
+
+/* Specific slide directions based on data-animation-direction attribute */
+/* Untuk gambar yang harus slide dari kiri */
+.zig-zag-item[data-animation-direction="left"] .zig-zag-image img {
+    transform: translateX(-100%); /* Gambar dimulai 100% di luar batas kirinya */
+}
+
+/* Untuk gambar yang slide dari kiri, saat terlihat */
+.zig-zag-item.is-visible[data-animation-direction="left"] .zig-zag-image img {
+    transform: translateX(0);
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .zig-zag-item,
+    .zig-zag-item.reverse {
+        flex-direction: column; /* Stack vertically */
+        text-align: center;
+        margin-bottom: 50px;
+        gap: 20px;
+    }
+
+    .zig-zag-content,
+    .zig-zag-image {
+        padding: 0;
+        width: 100%;
+        /* Reset any flex basis that might constrain width on mobile */
+        flex: none;
+    }
+
+    /* Untuk mobile, animasi gambar bisa diubah jadi fade-up sederhana agar lebih halus */
+    .zig-zag-image img {
+        transform: translateY(20px); /* Fade up from bottom */
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Sesuaikan kecepatan */
+    }
+
+    .zig-zag-item.is-visible .zig-zag-image img {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* --- END REVISED ZIG-ZAG ANIMATION CSS --- */

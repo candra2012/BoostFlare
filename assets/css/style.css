@@ -24,12 +24,10 @@ body {
 }
 
 /* Mengatur warna teks untuk semua heading dan elemen penting secara global */
-/* Ini akan menjadi override untuk Bootstrap jika warnanya beda */
 h1, h2, h3, h4, h5, h6, p, span, li, a {
     color: var(--white-text); /* Semua teks utama menjadi putih */
 }
-
-/* Kecuali untuk elemen spesifik yang memang harus beda warna, contohnya logo Bootstrap */
+/* Kecuali untuk elemen spesifik yang memang harus beda warna, contohnya logo */
 .navbar-brand { /* Ini adalah logo Bootstrap */
     color: var(--rose-gold) !important; /* Gunakan !important untuk menimpa Bootstrap */
     font-family: 'Playfair Display', serif; /* Pertahankan font */
@@ -235,13 +233,11 @@ footer .social-links a:hover {
 }
 
 
-/* ... (kode CSS lainnya di atas, tidak disentuh) ... */
-
 /* --- ZIG-ZAG ANIMATION CSS --- */
 
 .zig-zag-container {
     padding: 60px 0;
-    max-width: 1000px;
+    max-width: 1100px; /* <--- PERUBAHAN UTAMA: Kontainer utama lebih lebar */
     margin: 0 auto;
 }
 
@@ -250,7 +246,7 @@ footer .social-links a:hover {
     flex-direction: column; /* Gambar di atas, teks di bawah */
     align-items: center; /* Pusatkan item secara horizontal */
     margin-bottom: 80px;
-    gap: 15px; /* <--- PERUBAHAN UTAMA: Kurangi jarak dari 30px menjadi 15px */
+    gap: 15px; /* Kurangi jarak antara gambar dan teks */
     padding: 0;
 
     background-color: transparent;
@@ -271,7 +267,7 @@ footer .social-links a:hover {
 /* Kontainer Teks: Pastikan Benar-benar Statis */
 .zig-zag-content {
     width: 100%;
-    padding: 0 20px; /* Padding horizontal teks (pertahankan ini agar teks tidak menempel ke tepi) */
+    padding: 0 20px;
     text-align: center;
 
     opacity: 1 !important;
@@ -282,21 +278,20 @@ footer .social-links a:hover {
 
 /* Pastikan warna teks di zig-zag-content menjadi putih */
 .zig-zag-content p,
-.zig-zag-content h2 { /* Jika ada H2 di sini */
+.zig-zag-content h2 {
     color: var(--white-text) !important;
 }
 
 
 /* Kontainer Gambar: Ini yang Akan Slide */
 .zig-zag-image {
-    width: 80%; /* <--- PERUBAHAN UTAMA: Ditingkatkan dari 70% menjadi 80% */
-    max-width: 750px; /* <--- PERUBAHAN UTAMA: Ditingkatkan dari 650px menjadi 750px */
+    width: 90%; /* <--- PERUBAHAN UTAMA: Ditingkatkan dari 80% menjadi 90% */
+    max-width: 850px; /* <--- PERUBAHAN UTAMA: Ditingkatkan dari 750px menjadi 850px */
     text-align: center;
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Berikan shadow pada gambar itu sendiri */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 
-    /* Jaring pengaman: Pastikan kontainer gambar itu sendiri TIDAK memiliki transformasi */
     transform: none;
     animation: none;
     transition: none;
@@ -310,7 +305,7 @@ footer .social-links a:hover {
 
 /* Elemen Gambar: Ini yang Mengalami Animasi Slide */
 .zig-zag-image img {
-    width: 100%; /* Gambar mengisi penuh kontainer .zig-zag-image */
+    width: 100%;
     display: block;
     object-fit: cover;
 
@@ -323,7 +318,7 @@ footer .social-links a:hover {
 
     /* Initial state for IMAGE animation only */
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(100%); /* Default: slide dari kanan. Dimulai 100% di luar batas kanannya. */
 
     /* Transisi hanya pada gambar: opacity dan transform */
     transition: opacity 1.2s ease-out, transform 1.2s ease-out;
@@ -332,7 +327,7 @@ footer .social-links a:hover {
 /* Pemicu animasi slide gambar saat .zig-zag-item terlihat */
 .zig-zag-item.is-visible .zig-zag-image img {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0); /* Final state: kembali ke posisi normal */
 }
 
 /* Posisi Zig-zag untuk SELURUH ITEM (.zig-zag-item), bukan hanya gambar */
@@ -366,13 +361,13 @@ footer .social-links a:hover {
         flex-direction: column;
         align-items: center;
         margin-bottom: 50px;
-        gap: 15px; /* <--- PERUBAHAN: Kurangi jarak juga di mobile */
-        margin-left: auto;
-        margin-right: auto;
+        gap: 15px; /* Kurangi jarak juga di mobile */
+        margin-left: auto; /* Pusatkan di mobile */
+        margin-right: auto; /* Pusatkan di mobile */
     }
 
     .zig-zag-image {
-        width: 90%; /* <--- PERUBAHAN: Gambar bisa lebih lebar di mobile, dari 80% ke 90% */
+        width: 90%; /* Gambar lebih lebar di mobile, dari 80% ke 90% */
         max-width: 100%;
         box-shadow: none;
 
@@ -396,23 +391,28 @@ footer .social-links a:hover {
         color: var(--white-text) !important;
     }
 
+    /* === PERUBAHAN UTAMA UNTUK ANIMASI MOBILE: KEMBALI KE SLIDE HORIZONTAL === */
     .zig-zag-image img {
-        transform: translateY(20px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        /* Default mobile: slide dari kanan */
+        opacity: 0;
+        transform: translateX(100%);
+        transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* Durasi sama dengan desktop */
     }
 
     .zig-zag-item.is-visible .zig-zag-image img {
-        transform: translateY(0);
         opacity: 1;
+        transform: translateX(0);
     }
 
-    .zig-zag-item[data-animation-direction="left"] .zig-zag-image img,
-    .zig-zag-item[data-animation-direction="right"] .zig-zag-image img {
-        transform: translateY(20px);
+    /* Aturan ini menimpa aturan slideX default untuk mobile agar bisa slide dari kiri/kanan */
+    .zig-zag-item[data-animation-direction="left"] .zig-zag-image img {
+        transform: translateX(-100%);
     }
 
-    .zig-zag-item.is-visible[data-animation-direction="left"] .zig-zag-image img,
-    .zig-zag-item.is-visible[data-animation-direction="right"] .zig-zag-image img {
-        transform: translateY(0);
+    .zig-zag-item.is-visible[data-animation-direction="left"] .zig-zag-image img {
+        transform: translateX(0);
     }
-}
+
+    /* Hapus aturan transform: translateY yang ada di sini sebelumnya */
+    /* Ini untuk memastikan tidak ada konflik */
+    }

@@ -355,11 +355,9 @@ footer .social-links a:hover {
     }
 }
 
+/* ... (kode CSS lainnya di atas, tidak berubah) ... */
 
-
-/* ... (kode CSS lainnya di atas) ... */
-
-/* --- REVISED ZIG-ZAG ANIMATION CSS --- */
+/* --- REVISED ZIG-ZAG ANIMATION CSS (FINAL PUSH) --- */
 
 .zig-zag-container {
     padding: 60px 0;
@@ -380,30 +378,36 @@ footer .social-links a:hover {
     box-shadow: none;
 
     /* Animasi fade-in untuk seluruh item saat terlihat */
+    /* Ini akan membuat seluruh blok (gambar dan teks) fade-in secara bersamaan */
     opacity: 0;
     transition: opacity 0.8s ease-out;
+
+    /* *** PENTING: Pastikan TIDAK ADA TRANSFORM atau ANIMATION DI SINI *** */
+    /* Jika ada, hapus. Kita hanya ingin fade-in di sini. */
+    transform: none; /* Tambahkan ini sebagai jaring pengaman */
+    animation: none; /* Tambahkan ini sebagai jaring pengaman */
 }
 
 .zig-zag-item.is-visible {
     opacity: 1;
 }
 
-/* Tidak ada .reverse untuk flex-direction karena selalu column.
-   Efek zig-zag akan dibuat dengan margin atau transform horizontal pada item itu sendiri. */
+/* Tidak ada .reverse untuk flex-direction karena selalu column. */
 
 .zig-zag-content {
     width: 100%;
     padding: 0 20px;
     text-align: center;
 
-    /* ***** BAGIAN YANG DIUBAH/DIHAPUS UNTUK MENGHILANGKAN ANIMASI TEKS ***** */
-    opacity: 1; /* Pastikan teks selalu terlihat/tidak memiliki opacity 0 awal */
-    transform: none; /* Pastikan tidak ada transformasi */
-    transition: none; /* Hapus semua transisi */
+    /* *** PENTING: HILANGKAN SEMUA ANIMASI DAN TRANSFORM UNTUK TEKS *** */
+    opacity: 1 !important; /* Pastikan teks selalu terlihat dan tidak memiliki opacity awal 0 */
+    transform: none !important; /* Menjamin tidak ada transform yang memengaruhi teks */
+    animation: none !important; /* Menjamin tidak ada animasi yang memengaruhi teks */
+    transition: none !important; /* Menghilangkan semua transisi dari teks */
     /* ********************************************************************* */
 }
 
-/* Aturan ini tidak lagi diperlukan karena opacity: 1 ada di .zig-zag-content langsung */
+/* Aturan is-visible untuk .zig-zag-content tidak lagi diperlukan karena sudah di-force di atas */
 /* .zig-zag-item.is-visible .zig-zag-content {
     opacity: 1;
     transform: none;
@@ -435,10 +439,10 @@ footer .social-links a:hover {
 
 .zig-zag-item.is-visible .zig-zag-image img {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0); /* Final state: kembali ke posisi normal */
 }
 
-/* Zig-zag positioning for the entire item */
+/* Zig-zag positioning for the entire item (geser blok ke kiri/kanan) */
 .zig-zag-item[data-animation-direction="left"] {
     align-self: flex-start;
     margin-right: auto;
@@ -451,7 +455,7 @@ footer .social-links a:hover {
     margin-right: 0;
 }
 
-/* Specific slide directions based on data-animation-direction attribute */
+/* Specific slide directions for IMAGE only */
 .zig-zag-item[data-animation-direction="left"] .zig-zag-image img {
     transform: translateX(-100%);
 }
@@ -481,6 +485,11 @@ footer .social-links a:hover {
     .zig-zag-content {
         padding: 0 15px;
         text-align: center;
+        /* Di sini juga pastikan tidak ada animasi/transform untuk mobile */
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
     }
 
     /* Untuk mobile, animasi gambar bisa diubah jadi fade-up sederhana agar lebih halus */
@@ -494,7 +503,7 @@ footer .social-links a:hover {
         opacity: 1;
     }
 
-    /* Reset slide direction for mobile */
+    /* Reset slide direction for mobile (semua fade up) */
     .zig-zag-item[data-animation-direction="left"] .zig-zag-image img,
     .zig-zag-item[data-animation-direction="right"] .zig-zag-image img {
         transform: translateY(20px);
@@ -505,3 +514,5 @@ footer .social-links a:hover {
         transform: translateY(0);
     }
 }
+
+

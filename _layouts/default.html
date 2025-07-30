@@ -2,121 +2,48 @@
 <html lang="en">
 <head>
   {% include head.html %}
-  <style>
-    /* Hamburger Button */
-    .hamburger-menu {
-      background: none;
-      border: none;
-      font-size: 1.8em;
-      color: white;
-      cursor: pointer;
-      z-index: 1001;
-    }
-
-    /* Side Navigation */
-    #mobile-nav {
-      position: fixed;
-      top: 0;
-      left: -250px; /* Hide initially */
-      width: 250px;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
-      transition: left 0.3s ease-in-out;
-      padding-top: 80px;
-      z-index: 1000;
-    }
-
-    #mobile-nav.active {
-      left: 0; /* Slide in */
-    }
-
-    #mobile-nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    #mobile-nav ul li {
-      margin: 20px 0;
-      text-align: left;
-      padding-left: 20px;
-    }
-
-    #mobile-nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.2em;
-    }
-
-    /* Optional: add background animation fix */
-    .animated-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-    }
-  </style>
-</head>
+  </head>
 
 <body>
-  <!-- Background animation -->
   <div class="animated-background"></div>
 
-  <!-- Navbar -->
   {% include nav.html %}
 
-  <!-- Side Menu -->
-  <nav id="mobile-nav">
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Main content -->
   <main class="container">
     {{ content }}
   </main>
 
-  ...
-<!-- Footer -->
-{% include footer.html %}
+  {% include footer.html %}
 
-<!-- Script -->
-<script>
-  const hamburgerBtn = document.getElementById('hamburger-menu');
-  const mobileNav = document.getElementById('mobile-nav');
-  const searchButton = document.getElementById('search-button');
-  const searchInput = document.getElementById('search-input');
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburgerBtn = document.getElementById('hamburger-menu');
+      const mobileNav = document.getElementById('mobile-nav'); // Pastikan ID ini ada di _includes/nav.html
+      const searchButton = document.getElementById('search-button');
+      const searchInput = document.getElementById('search-input');
 
-  hamburgerBtn?.addEventListener('click', () => {
-    mobileNav.classList.toggle('active');
-  });
+      // Pastikan elemen ada sebelum menambahkan event listener
+      hamburgerBtn?.addEventListener('click', () => {
+        mobileNav?.classList.toggle('active'); // Gunakan optional chaining (?)
+      });
 
-  searchButton?.addEventListener('click', () => {
-    searchInput.classList.toggle('active');
-    if (searchInput.classList.contains('active')) {
-      searchInput.focus();
-    } else {
-      searchInput.value = '';
-    }
-  });
+      searchButton?.addEventListener('click', () => {
+        searchInput?.classList.toggle('active');
+        if (searchInput?.classList.contains('active')) {
+          searchInput.focus();
+        } else {
+          searchInput.value = '';
+        }
+      });
 
-  mobileNav?.addEventListener('click', (event) => {
-    if (event.target.tagName === 'A' || event.target === mobileNav) {
-      mobileNav.classList.remove('active');
-    }
-  });
-</script>
+      // Close mobile nav when clicking outside or on a link
+      mobileNav?.addEventListener('click', (event) => {
+        if (event.target.tagName === 'A' || event.target === mobileNav) {
+          mobileNav.classList.remove('active');
+        }
+      });
+    });
+  </script>
 
-<!-- ✅ Tambahkan baris ini -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-  
-</script>
-
-</body>
+  </body>
 </html>

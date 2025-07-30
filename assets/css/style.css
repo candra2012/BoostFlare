@@ -429,8 +429,14 @@ footer .social-links a:hover {
         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
 
+    
+    /* Letakkan di akhir file CSS kamu */
+.zig-zag-image img {
+    transform: translateX(100%);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
 
 body, h1, h2, h3, h4, h5, h6, p, span, li, a {
-  color: #ffffff !important;
+  color: var(--white-text) !important;
   font-weight: bold;
 }

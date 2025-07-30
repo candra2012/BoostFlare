@@ -16,6 +16,7 @@ padding: 0;
 box-sizing: border-box;
 }
 
+
 body {
 font-family: 'Montserrat', sans-serif;
 line-height: 1.6;
@@ -317,32 +318,32 @@ color: var(--rose-gold);
 display: none;
 }
 
-.mobile-nav {
-background-color: rgba(90, 59, 91, 0.95) !important; /* Latar belakang mobile nav deep-plum transparan */
-backdrop-filter: blur(10px);
-}
+.mobile-nav {  
+  background-color: rgba(90, 59, 91, 0.95) !important; /* Latar belakang mobile nav deep-plum transparan */  
+  backdrop-filter: blur(10px);  
+}  
 
-.mobile-nav ul li a {
-color: var(--white-text); /* Teks link navigasi desktop juga putih */
-}
+.mobile-nav ul li a {  
+    color: var(--white-text); /* Teks link navigasi desktop juga putih */  
+}  
 
-.mobile-nav ul li a:hover {
-background-color: rgba(252, 238, 240, 0.2);
-color: var(--rose-gold);
-}
+.mobile-nav ul li a:hover {  
+    background-color: rgba(252, 238, 240, 0.2);  
+    color: var(--rose-gold);  
+}  
 
-.search-input {
-color: var(--white-text); /* Teks input desktop putih */
-border: 1px solid rgba(255, 255, 255, 0.5);
-background-color: rgba(255, 255, 255, 0.1);
-}
+.search-input {  
+    color: var(--white-text); /* Teks input desktop putih */  
+    border: 1px solid rgba(255, 255, 255, 0.5);  
+    background-color: rgba(255, 255, 255, 0.1);  
+}  
 
-.search-input::placeholder {
-color: rgba(255, 255, 255, 0.7);
-}
+.search-input::placeholder {  
+    color: rgba(255, 255, 255, 0.7);  
+}  
 
-.search-button {
-color: var(--white-text); /* Tombol search desktop putih */
+.search-button {  
+    color: var(--white-text); /* Tombol search desktop putih */  
 }
 
 }
@@ -377,8 +378,8 @@ display: block;
 object-fit: cover;
 }
 
-opacity: 0;
-transform: translateX(100%);
+opacity: 0;  
+transform: translateX(100%);  
 
 transition: opacity 1.2s ease-out, transform 1.2s ease-out;
 
@@ -401,31 +402,32 @@ margin-left: auto;
 margin-right: auto;
 }
 
-.zig-zag-image {
-width: 100%;
-max-width: 100%;
-}
+.zig-zag-image {  
+    width: 100%;  
+    max-width: 100%;  
+}  
 
-.zig-zag-content {
-padding: 0 15px;
-text-align: center;
-opacity: 1 !important;
-transform: none !important;
-transition: none !important;
-animation: none !important;
-}
-.zig-zag-content p { /* Pastikan teks paragraf mobile juga putih /
-color: var(--white-text) !important;
-}
-.zig-zag-content h2 { / Pastikan H2 mobile juga putih */
-color: var(--white-text) !important;
-}
+.zig-zag-content {  
+    padding: 0 15px;  
+    text-align: center;  
+    opacity: 1 !important;  
+    transform: none !important;  
+    transition: none !important;  
+    animation: none !important;  
+}  
+.zig-zag-content p { /* Pastikan teks paragraf mobile juga putih */  
+    color: var(--white-text) !important;  
+}  
+.zig-zag-content h2 { /* Pastikan H2 mobile juga putih */  
+    color: var(--white-text) !important;  
+}  
 
-.zig-zag-image img {
-transform: translateY(20px);
-transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
+.zig-zag-image img {  
+    transform: translateY(20px);  
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;  
+}  
 
+  
 /* Letakkan di akhir file CSS kamu */
 
 .zig-zag-image img {
@@ -438,4 +440,3 @@ color: var(--white-text) !important;
 font-weight: bold;
 }
 
-  

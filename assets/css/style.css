@@ -301,9 +301,9 @@ footer .social-links a:hover {
     transition: none;
 
     /* === RASIO ASPEK 16:9 === */
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
+    position: block;
+    padding-bottom: 0;
+    height: auto;
     /* =========================================== */
 }
 

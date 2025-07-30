@@ -356,11 +356,14 @@ footer .social-links a:hover {
 }
 
 
-/* --- REVISED ZIG-ZAG ANIMATION CSS (untuk gambar di atas teks & tanpa box putih) --- */
+
+/* ... (kode CSS lainnya di atas) ... */
+
+/* --- REVISED ZIG-ZAG ANIMATION CSS --- */
 
 .zig-zag-container {
     padding: 60px 0;
-    max-width: 1000px; /* Lebar container diperkecil sedikit */
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -370,10 +373,13 @@ footer .social-links a:hover {
     align-items: center; /* Pusatkan item secara horizontal */
     margin-bottom: 80px;
     gap: 30px; /* Jarak antara gambar dan teks */
-    padding: 0; /* Hapus padding agar tidak ada box */
-    background-color: transparent; /* Hapus background putih box */
-    border-radius: 0; /* Hapus border radius */
-    box-shadow: none; /* Hapus box shadow */
+    padding: 0; /* Hapus padding agar tidak ada box yang menonjol */
+
+    /* ***** BAGIAN YANG DIUBAH/DIHAPUS UNTUK MENGHILANGKAN BOX PUTIH ***** */
+    background-color: transparent; /* Pastikan tidak ada background */
+    border-radius: 0; /* Pastikan tidak ada border-radius */
+    box-shadow: none; /* Pastikan tidak ada box-shadow */
+    /* ******************************************************************* */
 
     /* Animasi fade-in untuk seluruh item saat terlihat */
     opacity: 0;

@@ -5,6 +5,7 @@
     --soft-grey: #D8D8D8;
     --deep-plum: #5A3B5B;
     --hint-of-gold: #DAA520;
+    --white-text: #FFFFFF; /* Menambahkan variabel untuk putih cerah */
 }
 
 /* Reset CSS & Global Styles */
@@ -17,7 +18,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    color: var(--deep-plum);
+    color: var(--white-text); /* === INI PERUBAHAN UTAMA UNTUK SELURUH TEKS === */
     background-color: var(--lavender-blush); /* Fallback */
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
@@ -30,7 +31,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1; /* Ensure it's behind content */
-    background: linear-gradient(135deg, var(--lavender-blush), var(--rose-gold), var(--soft-grey));
+    background: linear-gradient(135deg, var(--deep-plum), var(--rose-gold), var(--lavender-blush)); /* Sesuaikan gradien agar kontras dengan teks putih */
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
 }
@@ -73,7 +74,7 @@ header {
 .logo {
     font-family: 'Playfair Display', serif;
     font-size: 2.2em;
-    color: var(--rose-gold);
+    color: var(--rose-gold); /* Tetap rose-gold untuk logo */
     text-decoration: none;
     font-weight: 700;
 }
@@ -83,7 +84,7 @@ header {
     background: none;
     border: none;
     font-size: 1.8em;
-    color: var(--deep-plum);
+    color: var(--white-text); /* Ubah warna hamburger */
     cursor: pointer;
     display: block;
     padding: 5px;
@@ -96,7 +97,7 @@ header {
     left: -250px;
     width: 250px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(90, 59, 91, 0.95); /* Ubah ke warna deep-plum transparan */
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     transition: left 0.3s ease-in-out;
     z-index: 100;
@@ -114,7 +115,7 @@ header {
 
 .mobile-nav ul li {
     margin: 0;
-    border-bottom: 1px solid var(--soft-grey);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Border lebih lembut */
 }
 
 .mobile-nav ul li:last-child {
@@ -125,14 +126,14 @@ header {
     display: block;
     padding: 15px 20px;
     text-decoration: none;
-    color: white; /* Diubah agar kontras dengan background mobile nav yang gelap */
+    color: var(--white-text); /* Link navigasi putih */
     font-weight: 500;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .mobile-nav ul li a:hover {
-    background-color: var(--lavender-blush);
-    color: var(--rose-gold);
+    background-color: rgba(252, 238, 240, 0.2); /* Background hover lavender blush transparan */
+    color: var(--rose-gold); /* Teks hover rose-gold */
 }
 
 /* Search Container */
@@ -143,7 +144,7 @@ header {
 }
 
 .search-input {
-    border: 1px solid var(--soft-grey);
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Border input putih transparan */
     padding: 8px 12px;
     border-radius: 20px;
     outline: none;
@@ -152,6 +153,12 @@ header {
     opacity: 0;
     visibility: hidden;
     margin-right: -25px;
+    background-color: rgba(255, 255, 255, 0.1); /* Background input transparan */
+    color: var(--white-text); /* Teks input putih */
+}
+
+.search-input::placeholder { /* Placeholder input putih */
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .search-input.active {
@@ -165,7 +172,7 @@ header {
 .search-button {
     background: none;
     border: none;
-    color: var(--deep-plum);
+    color: var(--white-text); /* Tombol search putih */
     font-size: 1.2em;
     cursor: pointer;
     position: absolute;
@@ -177,24 +184,24 @@ header {
 .hero-section {
   padding: 100px 20px;
   text-align: center;
-  background: linear-gradient(270deg, var(--lavender-blush), var(--rose-gold));
+  background: linear-gradient(270deg, var(--deep-plum), var(--rose-gold)); /* Sesuaikan gradien agar kontras dengan teks putih */
   background-size: 400% 400%;
   animation: gradientMove 12s ease infinite;
-  color: var(--deep-plum);
+  color: var(--white-text); /* Teks di hero section menjadi putih */
   border-radius: 0 0 2rem 2rem;
 }
 
 .hero-section h1 {
     font-family: 'Playfair Display', serif;
     font-size: 3.8em;
-    color: var(--deep-plum);
+    color: var(--white-text); /* H1 di hero section menjadi putih */
     margin-bottom: 20px;
     line-height: 1.2;
 }
 
 .hero-section p {
     font-size: 1.3em;
-    color: var(--deep-plum);
+    color: var(--white-text); /* P di hero section menjadi putih */
     max-width: 700px;
     margin-bottom: 40px;
 }
@@ -208,7 +215,7 @@ header {
 .cta-button {
     display: inline-block;
     background-color: var(--rose-gold);
-    color: white;
+    color: var(--white-text); /* Tombol CTA teks putih */
     padding: 15px 35px;
     text-decoration: none;
     border-radius: 5px;
@@ -235,7 +242,7 @@ header {
 .section h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2.8em;
-    color: var(--deep-plum);
+    color: var(--white-text); /* H2 di section menjadi putih */
     font-weight: 700;
     margin-bottom: 50px;
 }
@@ -248,29 +255,29 @@ header {
 }
 
 .service-card {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.1); /* Background card lebih transparan */
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Shadow lebih gelap */
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
 .service-card h3 {
     font-family: 'Playfair Display', serif;
-    color: var(--rose-gold);
+    color: var(--rose-gold); /* H3 di service card tetap rose-gold */
     font-weight: 700;
     font-size: 1.8em;
     margin-bottom: 15px;
 }
 
 .service-card p {
-    color: var(--deep-plum);
+    color: var(--white-text); /* P di service card menjadi putih */
     font-size: 1em;
     font-weight: 400;
 }
@@ -280,7 +287,7 @@ footer {
     text-align: center;
     padding: 40px 0;
     background-color: var(--deep-plum);
-    color: var(--soft-grey);
+    color: var(--soft-grey); /* Teks footer tetap soft-grey, atau bisa diubah ke white-text */
     font-size: 0.9em;
     margin-top: 50px;
     border-top-left-radius: 10px;
@@ -310,54 +317,36 @@ footer .social-links a:hover {
     }
 
     .mobile-nav {
-      background-color: rgba(0, 0, 0, 0.7) !important;
+      background-color: rgba(90, 59, 91, 0.95) !important; /* Latar belakang mobile nav deep-plum transparan */
       backdrop-filter: blur(10px);
     }
 
-    .mobile-nav {
-        position: static;
-        width: auto;
-        height: auto;
-        background: none;
-        box-shadow: none;
-        transition: none;
-        padding-top: 0;
-    }
-
-    .mobile-nav ul {
-        display: flex;
-    }
-
-    .mobile-nav ul li {
-        border-bottom: none;
-        margin-left: 30px;
-    }
-
     .mobile-nav ul li a {
-        padding: 0;
+        color: var(--white-text); /* Teks link navigasi desktop juga putih */
+    }
+
+    .mobile-nav ul li a:hover {
+        background-color: rgba(252, 238, 240, 0.2);
+        color: var(--rose-gold);
     }
 
     .search-input {
-        width: 180px;
-        opacity: 1;
-        visibility: visible;
-        margin-right: 0;
+        color: var(--white-text); /* Teks input desktop putih */
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        background-color: rgba(255, 255, 255, 0.1);
     }
 
-    .search-input.active {
-        width: 180px;
-        padding: 8px 12px;
+    .search-input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
     }
 
     .search-button {
-        position: static;
-        margin-left: 10px;
+        color: var(--white-text); /* Tombol search desktop putih */
     }
 }
 
-/* ... (kode CSS lainnya di atas, tidak berubah) ... */
 
-/* --- REVISED ZIG-ZAG ANIMATION CSS (FINAL PUSH) --- */
+/* --- ZIG-ZAG ANIMATION CSS (Pastikan ini yang Anda pakai dari revisi terakhir) --- */
 
 .zig-zag-container {
     padding: 60px 0;
@@ -367,51 +356,45 @@ footer .social-links a:hover {
 
 .zig-zag-item {
     display: flex;
-    flex-direction: column; /* Gambar di atas, teks di bawah */
-    align-items: center; /* Pusatkan item secara horizontal */
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 80px;
-    gap: 30px; /* Jarak antara gambar dan teks */
+    gap: 30px;
     padding: 0;
 
     background-color: transparent;
     border-radius: 0;
     box-shadow: none;
 
-    /* Animasi fade-in untuk seluruh item saat terlihat */
-    /* Ini akan membuat seluruh blok (gambar dan teks) fade-in secara bersamaan */
     opacity: 0;
     transition: opacity 0.8s ease-out;
 
-    /* *** PENTING: Pastikan TIDAK ADA TRANSFORM atau ANIMATION DI SINI *** */
-    /* Jika ada, hapus. Kita hanya ingin fade-in di sini. */
-    transform: none; /* Tambahkan ini sebagai jaring pengaman */
-    animation: none; /* Tambahkan ini sebagai jaring pengaman */
+    transform: none; /* Jaring pengaman */
+    animation: none; /* Jaring pengaman */
 }
 
 .zig-zag-item.is-visible {
     opacity: 1;
 }
 
-/* Tidak ada .reverse untuk flex-direction karena selalu column. */
-
 .zig-zag-content {
     width: 100%;
     padding: 0 20px;
     text-align: center;
 
-    /* *** PENTING: HILANGKAN SEMUA ANIMASI DAN TRANSFORM UNTUK TEKS *** */
-    opacity: 1 !important; /* Pastikan teks selalu terlihat dan tidak memiliki opacity awal 0 */
-    transform: none !important; /* Menjamin tidak ada transform yang memengaruhi teks */
-    animation: none !important; /* Menjamin tidak ada animasi yang memengaruhi teks */
-    transition: none !important; /* Menghilangkan semua transisi dari teks */
-    /* ********************************************************************* */
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
 }
 
-/* Aturan is-visible untuk .zig-zag-content tidak lagi diperlukan karena sudah di-force di atas */
-/* .zig-zag-item.is-visible .zig-zag-content {
-    opacity: 1;
-    transform: none;
-} */
+.zig-zag-content p { /* Spesifik ke paragraf di zig-zag-content */
+    color: var(--white-text) !important; /* Pastikan teks paragraf putih */
+}
+
+.zig-zag-content h2 { /* Jika ada H2 di zig-zag-content */
+    color: var(--white-text) !important; /* Pastikan H2 di zig-zag-content putih */
+}
 
 
 .zig-zag-image {
@@ -429,20 +412,17 @@ footer .social-links a:hover {
     display: block;
     height: auto;
 
-    /* Initial state for IMAGE animation only */
     opacity: 0;
-    transform: translateX(100%); /* Default: slide dari kanan */
+    transform: translateX(100%);
 
-    /* Transisi hanya pada gambar: opacity dan transform */
     transition: opacity 1.2s ease-out, transform 1.2s ease-out;
 }
 
 .zig-zag-item.is-visible .zig-zag-image img {
     opacity: 1;
-    transform: translateX(0); /* Final state: kembali ke posisi normal */
+    transform: translateX(0);
 }
 
-/* Zig-zag positioning for the entire item (geser blok ke kiri/kanan) */
 .zig-zag-item[data-animation-direction="left"] {
     align-self: flex-start;
     margin-right: auto;
@@ -455,7 +435,6 @@ footer .social-links a:hover {
     margin-right: 0;
 }
 
-/* Specific slide directions for IMAGE only */
 .zig-zag-item[data-animation-direction="left"] .zig-zag-image img {
     transform: translateX(-100%);
 }
@@ -485,14 +464,18 @@ footer .social-links a:hover {
     .zig-zag-content {
         padding: 0 15px;
         text-align: center;
-        /* Di sini juga pastikan tidak ada animasi/transform untuk mobile */
         opacity: 1 !important;
         transform: none !important;
         transition: none !important;
         animation: none !important;
     }
+    .zig-zag-content p { /* Pastikan teks paragraf mobile juga putih */
+        color: var(--white-text) !important;
+    }
+    .zig-zag-content h2 { /* Pastikan H2 mobile juga putih */
+        color: var(--white-text) !important;
+    }
 
-    /* Untuk mobile, animasi gambar bisa diubah jadi fade-up sederhana agar lebih halus */
     .zig-zag-image img {
         transform: translateY(20px);
         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -503,7 +486,6 @@ footer .social-links a:hover {
         opacity: 1;
     }
 
-    /* Reset slide direction for mobile (semua fade up) */
     .zig-zag-item[data-animation-direction="left"] .zig-zag-image img,
     .zig-zag-item[data-animation-direction="right"] .zig-zag-image img {
         transform: translateY(20px);
@@ -513,6 +495,4 @@ footer .social-links a:hover {
     .zig-zag-item.is-visible[data-animation-direction="right"] .zig-zag-image img {
         transform: translateY(0);
     }
-}
-
-
+    }

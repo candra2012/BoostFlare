@@ -364,20 +364,19 @@ footer .social-links a:hover {
 }
 
 
-.zig-zag-image {
-    width: 60%;
-    max-width: 500px;
-    height: auto;
-    text-align: center;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+.zigzag-img {
+  flex: 1 1 600px; /* Ganti 400px jadi lebih besar */
+  max-width: 100%;
+  width: 100%;
+  height: auto;
 }
 
-.zig-zag-image img {
-    width: 100%;
-    display: block;
-    height: auto;
+.zigzag-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
 
     opacity: 0;
     transform: translateX(100%);
@@ -405,7 +404,7 @@ footer .social-links a:hover {
     }
 
     .zig-zag-image {
-        width: 80%;
+        width: 100%;
         max-width: 100%;
     }
 

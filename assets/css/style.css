@@ -363,23 +363,6 @@ footer .social-links a:hover {
   object-fit: cover;
 }
 
-/* Animasi slide untuk teks juga */
-.slide-text {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: 0 auto;
-  animation: slideInUp 1s ease-out forwards;
-  opacity: 0;
-}
-
-/* Tambahkan delay agar muncul setelah gambar */
-.slide-text h2,
-.slide-text p {
-  animation: fadeIn 1s ease-out forwards;
-  animation-delay: 1s;
-  opacity: 0;
-}
-
 @keyframes slideInLeft {
   0% {
     transform: translateX(-100%);
@@ -387,17 +370,6 @@ footer .social-links a:hover {
   }
   100% {
     transform: translateX(0%);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInUp {
-  0% {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
     opacity: 1;
   }
 }

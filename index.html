@@ -4,7 +4,8 @@ title: Home
 description: Boost your online presence with our professional digital services – web design, SEO, and social media management.
 ---
 
-<section class="hero-section text-center" id="home"> <div class="container">
+<section class="hero-section text-center" id="home">
+  <div class="container">
     <h1 class="display-4 fw-bold">BoostFlare</h1>
     <p class="lead">We help businesses grow through smart, innovative digital solutions.</p>
     <a href="#services" class="btn btn-outline-light btn-lg mt-3">Explore Our Services</a>
@@ -18,7 +19,13 @@ description: Boost your online presence with our professional digital services �
   </p>
 </section>
 
-<section class="zig-zag-container"> <div class="zig-zag-item" data-animation-direction="right"> <div class="zig-zag-content"> <h2>Expand Your Digital Footprint</h2> <p style="text-align: left; font-size: 1.1em; color: var(--deep-plum); line-height: 1.8;">
+<section class="zig-zag-container">
+
+  <div class="zig-zag-item" data-animation-direction="right"> <div class="zig-zag-image"> <img src="https://raw.githubusercontent.com/candra2012/BoostFlare/refs/heads/main/image/Expand.Your.Digital.Footprint.webp" alt="Expand Your Digital Footprint" />
+    </div>
+    <div class="zig-zag-content">
+      <h2>Expand Your Digital Footprint</h2>
+      <p style="text-align: center; font-size: 1.1em; color: var(--deep-plum); line-height: 1.8;">
         In today’s fast-paced digital landscape, being online is not enough — you need to stand out. Expanding your digital footprint means building a strong, strategic, and consistent presence across the platforms where your audience already spends their time. At BoostFlare, we specialize in helping brands like yours <strong>increase online visibility</strong>, grow meaningful engagement, and <strong>connect with a global audience</strong>.
         <br><br>
         Your digital footprint is more than just a website or a social media profile. It’s the total of every interaction, search result, review, comment, and piece of content associated with your name. Every click, like, and share adds to your story. The stronger and more strategic that story is, the more trust you build with your audience — and the more authority your brand holds in your industry.
@@ -34,26 +41,28 @@ description: Boost your online presence with our professional digital services �
         Ready to expand your digital footprint? Let’s build a stronger online future, together.
       </p>
     </div>
-    <div class="zig-zag-image"> <img src="https://raw.githubusercontent.com/candra2012/BoostFlare/refs/heads/main/image/Expand.Your.Digital.Footprint.webp" alt="Expand Your Digital Footprint" />
-    </div>
   </div>
 
-  <div class="zig-zag-item reverse" data-animation-direction="left">
-    <div class="zig-zag-image">
-      <img src="{{ "/assets/images/youtube-engagement-landscape.jpg" | relative_url }}" alt="YouTube Likes and Comments"> </div>
+  <div class="zig-zag-item" data-animation-direction="left"> <div class="zig-zag-image">
+      <img src="{{ "/assets/images/youtube-engagement-landscape.jpg" | relative_url }}" alt="YouTube Likes and Comments" />
+    </div>
     <div class="zig-zag-content">
       <h2>Boost YouTube Engagement</h2>
-      <p>Maximize your YouTube presence with our tailored **YouTube comment services**. We deliver **real YouTube comments** to foster genuine interaction, ensuring **fast YouTube comments** and **affordable YouTube comments**. Whether you want to **buy YouTube comments** or enhance organic reach, we provide the **best YouTube comment service** for sustainable channel growth and community building.</p>
+      <p style="text-align: center; font-size: 1.1em; color: var(--deep-plum); line-height: 1.8;">
+        Maximize your YouTube presence with our tailored **YouTube comment services**. We deliver **real YouTube comments** to foster genuine interaction, ensuring **fast YouTube comments** and **affordable YouTube comments**. Whether you want to **buy YouTube comments** or enhance organic reach, we provide the **best YouTube comment service** for sustainable channel growth and community building.
+      </p>
     </div>
   </div>
 
-  <div class="zig-zag-item" data-animation-direction="right">
+  <div class="zig-zag-item" data-animation-direction="right"> <div class="zig-zag-image">
+      <img src="{{ "/assets/images/twitter-trending-landscape.jpg" | relative_url }}" alt="Twitter Trending Graph" />
+    </div>
     <div class="zig-zag-content">
       <h2>Achieve Twitter Trending Status</h2>
-      <p>Elevate your brand with our **Twitter trending topic service**. We help you achieve **trending 1 today** and consistently stay among the **top trendings**. Our strategies ensure your messages become the **trending topic on Twitter**, creating massive visibility. Experience the thrill of seeing your content make an impact and get that "**cool, finally made it to trending 6 in Indonesia**" recognition on a global scale.</p>
+      <p style="text-align: center; font-size: 1.1em; color: var(--deep-plum); line-height: 1.8;">
+        Elevate your brand with our **Twitter trending topic service**. We help you achieve **trending 1 today** and consistently stay among the **top trendings**. Our strategies ensure your messages become the **trending topic on Twitter**, creating massive visibility. Experience the thrill of seeing your content make an impact and get that "**cool, finally made it to trending 6 in Indonesia**" recognition on a global scale.
+      </p>
     </div>
-    <div class="zig-zag-image">
-      <img src="{{ "/assets/images/twitter-trending-landscape.jpg" | relative_url }}" alt="Twitter Trending Graph"> </div>
   </div>
 
 </section>
@@ -82,26 +91,26 @@ description: Boost your online presence with our professional digital services �
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => { // Pastikan JavaScript dijalankan setelah DOM siap
-      const zigZagItems = document.querySelectorAll('.zig-zag-item'); // Ganti .zigzag-section menjadi .zig-zag-item
+  document.addEventListener('DOMContentLoaded', () => {
+    const zigZagItems = document.querySelectorAll('.zig-zag-item'); // Pastikan ini menargetkan .zig-zag-item
 
-      const observerOptions = {
-          root: null, // relative to the viewport
-          rootMargin: '0px',
-          threshold: 0.3 // Percentage of the item that needs to be visible to trigger
-      };
+    const observerOptions = {
+      root: null, // relative to the viewport
+      rootMargin: '0px',
+      threshold: 0.3
+    };
 
-      const observer = new IntersectionObserver((entries, observer) => {
-          entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                  entry.target.classList.add('is-visible'); // Tambahkan class yang memicu animasi di CSS
-                  observer.unobserve(entry.target); // Stop observing once animated
-              }
-          });
-      }, observerOptions);
-
-      zigZagItems.forEach(item => {
-          observer.observe(item);
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
       });
+    }, observerOptions);
+
+    zigZagItems.forEach(item => {
+      observer.observe(item);
+    });
   });
-            </script>
+</script>

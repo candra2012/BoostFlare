@@ -363,23 +363,6 @@ footer .social-links a:hover {
   object-fit: cover;
 }
 
-@keyframes slideInLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
 /* Hindari semua isi section ikut geser */
 .zigzag-section {
   opacity: 0;

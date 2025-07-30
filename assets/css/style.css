@@ -235,6 +235,8 @@ footer .social-links a:hover {
 }
 
 
+/* ... (kode CSS lainnya di atas, tidak disentuh) ... */
+
 /* --- ZIG-ZAG ANIMATION CSS --- */
 
 .zig-zag-container {
@@ -248,17 +250,16 @@ footer .social-links a:hover {
     flex-direction: column; /* Gambar di atas, teks di bawah */
     align-items: center; /* Pusatkan item secara horizontal */
     margin-bottom: 80px;
-    gap: 30px; /* Jarak antara gambar dan teks */
+    gap: 15px; /* <--- PERUBAHAN UTAMA: Kurangi jarak dari 30px menjadi 15px */
     padding: 0;
 
-    background-color: transparent; /* Pastikan tidak ada background */
-    border-radius: 0; /* Pastikan tidak ada border-radius */
-    box-shadow: none; /* Pastikan tidak ada box-shadow */
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
 
-    opacity: 0; /* Seluruh item dimulai transparan (untuk fade-in) */
-    transition: opacity 0.8s ease-out; /* Fade-in untuk seluruh item */
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
 
-    /* Jaring pengaman: Pastikan item itu sendiri TIDAK memiliki transform */
     transform: none;
     animation: none;
 }
@@ -270,15 +271,13 @@ footer .social-links a:hover {
 /* Kontainer Teks: Pastikan Benar-benar Statis */
 .zig-zag-content {
     width: 100%;
-    padding: 0 20px;
+    padding: 0 20px; /* Padding horizontal teks (pertahankan ini agar teks tidak menempel ke tepi) */
     text-align: center;
 
-    /* *** INI KUNCI UNTUK TEKS STATIS *** */
-    opacity: 1 !important; /* Teks selalu terlihat (tidak fade-in terpisah) */
-    transform: none !important; /* Tidak ada pergeseran/transformasi */
-    animation: none !important; /* Tidak ada animasi */
-    transition: none !important; /* Tidak ada transisi */
-    /* ********************************* */
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
 }
 
 /* Pastikan warna teks di zig-zag-content menjadi putih */
@@ -290,8 +289,8 @@ footer .social-links a:hover {
 
 /* Kontainer Gambar: Ini yang Akan Slide */
 .zig-zag-image {
-    width: 70%; /* Lebar yang sudah kita tingkatkan sebelumnya */
-    max-width: 650px; /* Batas maksimum lebar */
+    width: 80%; /* <--- PERUBAHAN UTAMA: Ditingkatkan dari 70% menjadi 80% */
+    max-width: 750px; /* <--- PERUBAHAN UTAMA: Ditingkatkan dari 650px menjadi 750px */
     text-align: center;
     overflow: hidden;
     border-radius: 8px;
@@ -303,28 +302,28 @@ footer .social-links a:hover {
     transition: none;
 
     /* === RASIO ASPEK 16:9 === */
-    position: relative; /* Penting: agar gambar di dalamnya bisa di-posisikan absolut */
-    padding-bottom: 56.25%; /* (Tinggi / Lebar) * 100% = (9 / 16) * 100% = 56.25% */
-    height: 0; /* Mengatur tinggi menjadi 0 agar padding-bottom yang menentukan tinggi */
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
     /* =========================================== */
 }
 
 /* Elemen Gambar: Ini yang Mengalami Animasi Slide */
 .zig-zag-image img {
     width: 100%; /* Gambar mengisi penuh kontainer .zig-zag-image */
-    display: block; /* Hilangkan spasi bawah default img */
-    object-fit: cover; /* Pastikan gambar mengisi tanpa distorsi */
+    display: block;
+    object-fit: cover;
 
     /* === RASIO ASPEK 16:9 === */
-    position: absolute; /* Penting: agar gambar mengisi penuh kontainer parent */
+    position: absolute;
     top: 0;
     left: 0;
-    height: 100%; /* Gambar akan mengisi penuh tinggi kontainer .zig-zag-image */
+    height: 100%;
     /* =========================================== */
 
     /* Initial state for IMAGE animation only */
     opacity: 0;
-    transform: translateX(100%); /* Default: slide dari kanan. Dimulai 100% di luar batas kanannya. */
+    transform: translateX(100%);
 
     /* Transisi hanya pada gambar: opacity dan transform */
     transition: opacity 1.2s ease-out, transform 1.2s ease-out;
@@ -333,7 +332,7 @@ footer .social-links a:hover {
 /* Pemicu animasi slide gambar saat .zig-zag-item terlihat */
 .zig-zag-item.is-visible .zig-zag-image img {
     opacity: 1;
-    transform: translateX(0); /* Final state: kembali ke posisi normal */
+    transform: translateX(0);
 }
 
 /* Posisi Zig-zag untuk SELURUH ITEM (.zig-zag-item), bukan hanya gambar */
@@ -351,7 +350,7 @@ footer .social-links a:hover {
 
 /* Mengatur posisi awal gambar untuk SLIDE DARI KIRI */
 .zig-zag-item[data-animation-direction="left"] .zig-zag-image img {
-    transform: translateX(-100%); /* Gambar mulai 100% di luar batas kirinya */
+    transform: translateX(-100%);
 }
 
 /* Mengatur posisi akhir gambar untuk SLIDE DARI KIRI saat terlihat */
@@ -367,34 +366,38 @@ footer .social-links a:hover {
         flex-direction: column;
         align-items: center;
         margin-bottom: 50px;
-        gap: 20px;
-        margin-left: auto; /* Pusatkan di mobile */
-        margin-right: auto; /* Pusatkan di mobile */
+        gap: 15px; /* <--- PERUBAHAN: Kurangi jarak juga di mobile */
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .zig-zag-image {
-        width: 80%; /* Gambar bisa lebih lebar di mobile */
+        width: 90%; /* <--- PERUBAHAN: Gambar bisa lebih lebar di mobile, dari 80% ke 90% */
         max-width: 100%;
-        box-shadow: none; /* Hilangkan shadow gambar di mobile agar lebih ringan */
+        box-shadow: none;
 
         /* === RASIO ASPEK 16:9 UNTUK MOBILE === */
         position: relative;
-        padding-bottom: 56.25%; /* Rasio 16:9 tetap di mobile */
+        padding-bottom: 56.25%;
         height: 0;
         /* =========================================== */
     }
 
-    .zig-zag-image img {
-        /* === RASIO ASPEK 16:9 UNTUK MOBILE === */
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        /* =========================================== */
+    .zig-zag-content {
+        padding: 0 15px;
+        text-align: center;
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+    }
+    .zig-zag-content p,
+    .zig-zag-content h2 {
+        color: var(--white-text) !important;
+    }
 
-        transform: translateY(20px); /* Mobile specific animation: Fade-up */
+    .zig-zag-image img {
+        transform: translateY(20px);
         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
 
@@ -403,14 +406,13 @@ footer .social-links a:hover {
         opacity: 1;
     }
 
-    /* Reset slide direction for mobile (semua fade up) */
     .zig-zag-item[data-animation-direction="left"] .zig-zag-image img,
     .zig-zag-item[data-animation-direction="right"] .zig-zag-image img {
-        transform: translateY(20px); /* Semua slide up */
+        transform: translateY(20px);
     }
 
     .zig-zag-item.is-visible[data-animation-direction="left"] .zig-zag-image img,
     .zig-zag-item.is-visible[data-animation-direction="right"] .zig-zag-image img {
         transform: translateY(0);
     }
-        }
+}

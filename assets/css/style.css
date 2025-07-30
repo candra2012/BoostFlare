@@ -302,7 +302,7 @@ footer .social-links a:hover {
 
     /* === RASIO ASPEK 16:9 === */
     position: relative;
-    padding-bottom: 0;
+    padding-bottom: 100%;
     height: auto;
     /* =========================================== */
 }

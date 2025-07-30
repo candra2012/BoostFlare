@@ -373,20 +373,17 @@ footer .social-links a:hover {
     align-items: center; /* Pusatkan item secara horizontal */
     margin-bottom: 80px;
     gap: 30px; /* Jarak antara gambar dan teks */
-    padding: 0; /* Hapus padding agar tidak ada box yang menonjol */
+    padding: 0;
 
-    /* ***** BAGIAN YANG DIUBAH/DIHAPUS UNTUK MENGHILANGKAN BOX PUTIH ***** */
-    background-color: transparent; /* Pastikan tidak ada background */
-    border-radius: 0; /* Pastikan tidak ada border-radius */
-    box-shadow: none; /* Pastikan tidak ada box-shadow */
-    /* ******************************************************************* */
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
 
     /* Animasi fade-in untuk seluruh item saat terlihat */
     opacity: 0;
     transition: opacity 0.8s ease-out;
 }
 
-/* Class added by JavaScript when item is visible */
 .zig-zag-item.is-visible {
     opacity: 1;
 }
@@ -395,75 +392,70 @@ footer .social-links a:hover {
    Efek zig-zag akan dibuat dengan margin atau transform horizontal pada item itu sendiri. */
 
 .zig-zag-content {
-    width: 100%; /* Konten teks mengambil lebar penuh item */
-    padding: 0 20px; /* Padding horizontal agar teks tidak terlalu menempel */
-    text-align: center; /* Pusatkan teks */
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
 
-    /* Animasi fade-in untuk teks */
-    opacity: 0;
-    transition: opacity 0.8s ease-out 0.4s; /* Fade-in setelah gambar sedikit masuk */
+    /* ***** BAGIAN YANG DIUBAH/DIHAPUS UNTUK MENGHILANGKAN ANIMASI TEKS ***** */
+    opacity: 1; /* Pastikan teks selalu terlihat/tidak memiliki opacity 0 awal */
+    transform: none; /* Pastikan tidak ada transformasi */
+    transition: none; /* Hapus semua transisi */
+    /* ********************************************************************* */
 }
 
-/* Pastikan teks terlihat setelah parent .zig-zag-item visible */
-.zig-zag-item.is-visible .zig-zag-content {
+/* Aturan ini tidak lagi diperlukan karena opacity: 1 ada di .zig-zag-content langsung */
+/* .zig-zag-item.is-visible .zig-zag-content {
     opacity: 1;
     transform: none;
-}
+} */
 
 
 .zig-zag-image {
-    width: 60%; /* Lebar gambar (bisa disesuaikan, tidak full) */
-    max-width: 500px; /* Batasi ukuran maksimum gambar */
-    height: auto; /* Jaga rasio aspek */
-    text-align: center; /* Pusatkan gambar di dalam div-nya */
-    overflow: hidden; /* Penting: Menyembunyikan bagian gambar yang meluncur dari luar */
-    border-radius: 8px; /* Tetap berikan border-radius pada gambar */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Berikan shadow pada gambar itu sendiri */
+    width: 60%;
+    max-width: 500px;
+    height: auto;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .zig-zag-image img {
-    width: 100%; /* Gambar mengisi penuh kontainer .zig-zag-image */
-    display: block; /* Hilangkan spasi bawah default img */
+    width: 100%;
+    display: block;
     height: auto;
 
     /* Initial state for IMAGE animation only */
     opacity: 0;
-    /* Default: slide dari kanan. Gambar dimulai 100% di luar batas kanannya. */
-    transform: translateX(100%);
+    transform: translateX(100%); /* Default: slide dari kanan */
 
     /* Transisi hanya pada gambar: opacity dan transform */
     transition: opacity 1.2s ease-out, transform 1.2s ease-out;
 }
 
-/* Animation trigger for images when .zig-zag-item is visible */
 .zig-zag-item.is-visible .zig-zag-image img {
     opacity: 1;
-    transform: translateX(0); /* Final state: kembali ke posisi normal */
+    transform: translateX(0);
 }
 
-
 /* Zig-zag positioning for the entire item */
-/* Menggeser seluruh blok .zig-zag-item untuk menciptakan efek zig-zag */
 .zig-zag-item[data-animation-direction="left"] {
-    align-self: flex-start; /* Geser ke kiri dalam container parent */
-    margin-right: auto; /* Untuk memastikan tetap di kiri */
+    align-self: flex-start;
+    margin-right: auto;
     margin-left: 0;
 }
 
 .zig-zag-item[data-animation-direction="right"] {
-    align-self: flex-end; /* Geser ke kanan dalam container parent */
-    margin-left: auto; /* Untuk memastikan tetap di kanan */
+    align-self: flex-end;
+    margin-left: auto;
     margin-right: 0;
 }
 
-
 /* Specific slide directions based on data-animation-direction attribute */
-/* Untuk gambar yang harus slide dari kiri (jika item itu sendiri di kiri) */
 .zig-zag-item[data-animation-direction="left"] .zig-zag-image img {
-    transform: translateX(-100%); /* Gambar mulai 100% di luar batas kirinya */
+    transform: translateX(-100%);
 }
 
-/* Untuk gambar yang slide dari kiri, saat terlihat */
 .zig-zag-item.is-visible[data-animation-direction="left"] .zig-zag-image img {
     transform: translateX(0);
 }
@@ -472,30 +464,29 @@ footer .social-links a:hover {
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     .zig-zag-item,
-    .zig-zag-item.reverse { /* Both directions stack vertically */
+    .zig-zag-item.reverse {
         flex-direction: column;
-        align-items: center; /* Pusatkan lagi */
+        align-items: center;
         margin-bottom: 50px;
         gap: 20px;
-        /* Reset margin untuk mobile agar terpusat */
         margin-left: auto;
         margin-right: auto;
     }
 
     .zig-zag-image {
-        width: 80%; /* Gambar bisa lebih lebar di mobile */
-        max-width: 100%; /* Batasi agar tidak terlalu besar */
+        width: 80%;
+        max-width: 100%;
     }
 
     .zig-zag-content {
-        padding: 0 15px; /* Sesuaikan padding teks untuk mobile */
+        padding: 0 15px;
         text-align: center;
     }
 
     /* Untuk mobile, animasi gambar bisa diubah jadi fade-up sederhana agar lebih halus */
     .zig-zag-image img {
-        transform: translateY(20px); /* Fade up from bottom */
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Sesuaikan kecepatan */
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
 
     .zig-zag-item.is-visible .zig-zag-image img {
@@ -506,7 +497,7 @@ footer .social-links a:hover {
     /* Reset slide direction for mobile */
     .zig-zag-item[data-animation-direction="left"] .zig-zag-image img,
     .zig-zag-item[data-animation-direction="right"] .zig-zag-image img {
-        transform: translateY(20px); /* Semua slide up */
+        transform: translateY(20px);
     }
 
     .zig-zag-item.is-visible[data-animation-direction="left"] .zig-zag-image img,

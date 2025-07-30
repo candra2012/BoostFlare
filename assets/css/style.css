@@ -419,12 +419,14 @@ footer .social-links a:hover {
   opacity: 1;
 }
 
-/* Gambar saja yang animasi slide kiri */
-.animate-slide-left {
+/* Gambar saja yang animasi slide dari kiri */
+.zigzag-img {
   animation: slideInLeft 1s ease-out forwards;
 }
 
-/* Slide dari kiri */
+/* Pastikan text tidak ikut animasi, jadi kita tidak beri class atau style animasi pada <p> */
+
+/* Keyframe animasi slide kiri */
 @keyframes slideInLeft {
   from {
     transform: translateX(-100%);

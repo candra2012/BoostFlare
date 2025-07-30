@@ -354,39 +354,6 @@ footer .social-links a:hover {
     margin: 0 auto;
 }
 
-.zig-zag-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 80px;
-    gap: 30px;
-    padding: 0;
-
-    background-color: transparent;
-    border-radius: 0;
-    box-shadow: none;
-
-    opacity: 0;
-    transition: opacity 0.8s ease-out;
-
-    transform: none; /* Jaring pengaman */
-    animation: none; /* Jaring pengaman */
-}
-
-.zig-zag-item.is-visible {
-    opacity: 1;
-}
-
-.zig-zag-content {
-    width: 100%;
-    padding: 0 20px;
-    text-align: center;
-
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-    transition: none !important;
-}
 
 .zig-zag-content p { /* Spesifik ke paragraf di zig-zag-content */
     color: var(--white-text) !important; /* Pastikan teks paragraf putih */
@@ -423,25 +390,6 @@ footer .social-links a:hover {
     transform: translateX(0);
 }
 
-.zig-zag-item[data-animation-direction="left"] {
-    align-self: flex-start;
-    margin-right: auto;
-    margin-left: 0;
-}
-
-.zig-zag-item[data-animation-direction="right"] {
-    align-self: flex-end;
-    margin-left: auto;
-    margin-right: 0;
-}
-
-.zig-zag-item[data-animation-direction="left"] .zig-zag-image img {
-    transform: translateX(-100%);
-}
-
-.zig-zag-item.is-visible[data-animation-direction="left"] .zig-zag-image img {
-    transform: translateX(0);
-}
 
 
 /* Responsive adjustments for smaller screens */
@@ -481,21 +429,6 @@ footer .social-links a:hover {
         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
 
-    .zig-zag-item.is-visible .zig-zag-image img {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    .zig-zag-item[data-animation-direction="left"] .zig-zag-image img,
-    .zig-zag-item[data-animation-direction="right"] .zig-zag-image img {
-        transform: translateY(20px);
-    }
-
-    .zig-zag-item.is-visible[data-animation-direction="left"] .zig-zag-image img,
-    .zig-zag-item.is-visible[data-animation-direction="right"] .zig-zag-image img {
-        transform: translateY(0);
-    }
-    }
 
 body, h1, h2, h3, h4, h5, h6, p, span, li, a {
   color: #ffffff !important;
